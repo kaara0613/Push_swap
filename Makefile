@@ -6,13 +6,13 @@
 #    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/10/24 18:52:19 by kaara            ###   ########.fr        #
+#    Updated: 2024/11/11 15:48:58 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Push_swap.a
 
-SRCS = Push_swap.c Push_swap_u.c stack_make.c stack_use.c
+SRCS = Push_swap.c stack_make.c stack_use.c Push_swap_push.c Push_swap_rotate.c Push_swap_swap.c
 
 OBJS = ${SRCS:.c=.o}
 

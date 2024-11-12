@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/10/28 03:33:05 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/11 18:57:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ struct stack	*make_stack_a(int	argc, char	**argv)
         if (count == stack_a->size)
         	break ;
     }
-    stack_a->top = stack_a->size;
+    stack_a->top = stack_a->size - 1;
 	return (stack_a);
 }
 
@@ -51,4 +51,13 @@ struct stack	*make_stack_b(struct stack	*stack_a)
         return (NULL);
     stack_b->top = -1;
     return (stack_b);
+}
+
+bool	free_stack(struct stack *stack_a, struct stack *stack_b)
+{
+	free(stack_a->numbers);
+    free(stack_a);
+    free(stack_b->numbers);
+    free(stack_b);
+    return (true);
 }

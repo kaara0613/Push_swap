@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/10/28 03:38:34 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/11 20:01:58 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,24 @@
 
 int main (int argc, char **argv)
 {
+    int pivot;
     struct stack *stack_a;
     struct stack *stack_b;
 
-	stack_a = make_stack_a(argc, argv);;
+    if (argc <= 2)
+    	return (0);
+    pivot = 5;
+	stack_a = make_stack_a(argc, argv);
     stack_b = make_stack_b(stack_a);
-    quick_sort(stack_a, stack_b);
-	for (int i = 0; i < stack_a->size; i++)
+	// make_pivot();
+    push_swap(pivot, stack_a, stack_b);
+    while (stack_b->top <= -1)
+        pa(stack_a, stack_b);
+	for (int i = 0; i <= stack_a->top; i++)
 		printf("%d", stack_a->numbers[i]);
-    free (stack_a->numbers);
-    free (stack_a);
-    free (stack_b->numbers);
-    free (stack_b);
+    printf("\n");
+    for (int i = 0; i <= stack_b->top; i++)
+		printf("%d", stack_b->numbers[i]);
+	free_stack(stack_a, stack_b);
     return (0);
 }
