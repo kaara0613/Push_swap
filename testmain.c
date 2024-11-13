@@ -6,33 +6,27 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:55:04 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/11 20:04:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/12 18:17:21 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int main (int argc, char **argv)
-{
-    // int pivot;
-    struct stack *stack_a;
-    struct stack *stack_b;
+// int pivot_make(struct stack	*stack_a, struct stack	*stack_b)
+// {
+//     int pivot;
 
-    if (argc <= 2)
-    	return (0);
-    // pivot = 5;
-	stack_a = make_stack_a(argc, argv);
-    stack_b = make_stack_b(stack_a);
-	// make_pivot();
-    // push_swap(pivot, stack_a, stack_b);
-    // while (stack_b->top <= -1)
-    //     pa(stack_a, stack_b);
-	sa(stack_a);
-	for (int i = 0; i <= stack_a->top; i++)
-		printf("%d", stack_a->numbers[i]);
-    printf("\n");
-    for (int i = 0; i <= stack_b->top; i++)
-		printf("%d", stack_b->numbers[i]);
-	free_stack(stack_a, stack_b);
-    return (0);
-}
+//     pivot = 5;
+// 	int stack_b_max_or_min_value = 1;
+//     stack_flag_make(pivot, stack_a);
+//     stack_flag_make(stack_b_max_or_min_value, stack_b);
+// }
+
+// void stack_flag_make(int max_or_min_value, struct stack	*stack_temp)
+// {
+//     int i;
+// 	stack_temp->max_or_min_value = max_or_min_value;
+//     while(stack_temp->numbers[i] != max_or_min_value)
+//     	i++;
+//     stack_temp->flag = stack_temp->top - i;
+// }

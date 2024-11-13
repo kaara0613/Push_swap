@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/11 16:14:12 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/13 11:06:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ struct stack {
     int *numbers;
     int top;
     int size;
+    int flag;//max_or_min_valueがtopから離れている距離
+    int max_or_min_value;
 };
 
 //push_swap.c
@@ -46,7 +48,7 @@ bool pb(struct stack *stack_a, struct stack *stack_b);
 void ra(struct stack *stack_a);
 void rb(struct stack *stack_b);
 void rr(struct stack *stack_a, struct stack *stack_b);
-// static void	rev_rotete(struct stack *stack_temp)
+void	rev_rotate(struct stack *stack_temp);
 // static void rra(int *stack_a)
 // static void rrb(int *stack_b)
 // static void rrr(struct stack *stack_a, struct stack *stack_b)
@@ -55,5 +57,13 @@ void rr(struct stack *stack_a, struct stack *stack_b);
 bool sa(struct stack *stack_a);
 bool sb(struct stack *stack_b);
 void ss(struct stack *stack_a, struct stack *stack_b);
+
+// make_pivot.c
+int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
+void	stack_flag_make(int max_or_min_value, struct stack	*stack_temp);
+
+bool check_rotate(int pivot, struct stack	*stack_a, struct stack	*stack_b);
+bool	check_sort_a(struct stack	stack_a);
+bool	check_sort_b(struct stack	stack_b);
 
 #endif
