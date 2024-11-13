@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/12 21:27:23 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/13 11:45:50 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ struct stack	*make_stack_a(int	argc, char	**argv)
 	struct stack *stack_a;
     int	count;
 
-	stack_a = NULL;
 	count = 0;
     stack_a = (struct stack *)malloc(sizeof(struct stack));
     if (!stack_a)
@@ -26,12 +25,10 @@ struct stack	*make_stack_a(int	argc, char	**argv)
     stack_a->numbers = (int *)malloc(sizeof(int) * stack_a->size);
     if (!stack_a->numbers)
         return (free(stack_a), NULL);
-    while(1)
+    while(count < stack_a->size)
     {
 		stack_a->numbers[count] = atoi(argv[count + 1]);
         count++;
-        if (count == stack_a->size)
-        	break ;
     }
     stack_a->top = stack_a->size - 1;
 	return (stack_a);
@@ -41,14 +38,13 @@ struct stack	*make_stack_b(struct stack	*stack_a)
 {
 	struct stack	*stack_b;
 
-	stack_b = NULL;
     stack_b = (struct stack *)malloc(sizeof(struct stack));
     if (!stack_b)
         return (NULL);
     stack_b->size = stack_a->size;
     stack_b->numbers = (int *)malloc(sizeof(int) * stack_b->size);
     if (!stack_b->numbers)
-        return (NULL);
+        return (free(stack_a), NULL);
     stack_b->top = -1;
     return (stack_b);
 }
