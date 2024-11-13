@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   unit_test00.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/13 16:49:58 by kaara            ###   ########.fr       */
+/*   Created: 2024/11/13 16:55:12 by kaara             #+#    #+#             */
+/*   Updated: 2024/11/13 16:56:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 int main (int argc, char **argv)
 {
@@ -21,17 +21,10 @@ int main (int argc, char **argv)
         return (0);
     stack_a = make_stack_a(argc, argv);
     stack_b = make_stack_b(stack_a);
-    // int pivot;
-    // pivot = pivot_make(stack_a, stack_b);
-    // push_swap(pivot, stack_a, stack_b);
+
     bool sidv = check_sort_a(*stack_a);
     printf("%d", sidv);
-    pb(stack_a, stack_b);
-    for (int i = 0; i <= stack_a->top; i++)
-        printf("%d", stack_a->numbers[i]);
-    printf("\n");
-    for (int i = 0; i <= stack_b->top; i++)
-        printf("%d", stack_b->numbers[i]);
+
     free_stack(stack_a, stack_b);
     return (0);
 }

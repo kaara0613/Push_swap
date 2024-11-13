@@ -20,7 +20,9 @@ struct stack	*make_stack_a(int	argc, char	**argv)
 	count = 0;
     stack_a = (struct stack *)malloc(sizeof(struct stack));
     if (!stack_a)
+    {
         return (NULL);
+    }
 	stack_a->size = argc - 1;
     stack_a->numbers = (int *)malloc(sizeof(int) * stack_a->size);
     if (!stack_a->numbers)

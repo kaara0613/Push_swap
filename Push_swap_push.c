@@ -18,7 +18,7 @@ bool pa(struct stack *stack_a, struct stack *stack_b)
 
     if (stack_b->top < 0)
 	{
-    	printf("This stack is void.\n");
+    	printf("This bstack is void.\n");
     	return (false);
     }
     temp = pop(stack_b);
@@ -38,7 +38,7 @@ bool pb(struct stack *stack_a, struct stack *stack_b)
 
     if (stack_a->top < 0)
 	{
-    	printf("This stack is void.\n");
+    	printf("This astack is void.\n");
     	return (false);
     }
     temp = pop(stack_a);

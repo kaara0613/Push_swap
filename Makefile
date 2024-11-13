@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
+#    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/11/12 19:49:33 by kaara            ###   ########.fr        #
+#    Updated: 2024/11/13 17:02:19 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
+TEST00=unit_test/unit_test00.c
+# TEST00_OBJ = ${TEST00:.c=.o}
+
 all: ${NAME}
 
 ${NAME}: ${OBJS}
@@ -36,6 +39,10 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 
+test:all
+	$(CC) $(CFLAGS) $(TEST00) $(NAME)
+	
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
