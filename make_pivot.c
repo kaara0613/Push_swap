@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 18:06:46 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/14 22:59:21 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	pivot_make(struct stack *stack_a, struct stack *stack_b)
 
 	pivot = 5;
 	stack_b_max_or_min_value = 5;
-	stack_flag_make(pivot, stack_a);
-	stack_flag_make(stack_b_max_or_min_value, stack_b);
+	stack_flag_make(stack_b_max_or_min_value, stack_a);
+	stack_flag_make(pivot, stack_b);
 	return (pivot);
 }
 
