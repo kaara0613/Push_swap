@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_all_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/13 13:20:34 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/13 17:25:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ bool	check_sort_a(struct stack	stack_a)
         rev_rotate(&stack_a);
     while (i < stack_a.top)
     {
+        printf("-----------------------------\n");
+        for (int j = 0; j <= stack_a.top; j++)
+            printf("%d:%d\n",j, stack_a.numbers[j]);
 		if(stack_a.numbers[i] < stack_a.numbers[i + 1])
         	return (false);
         i++;

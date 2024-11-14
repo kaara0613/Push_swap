@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:55:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/13 16:56:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/13 17:22:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int main (int argc, char **argv)
     stack_b = make_stack_b(stack_a);
 
     bool sidv = check_sort_a(*stack_a);
-    printf("%d", sidv);
+    printf("sidv :%d\n", sidv);
+
+    for (int i = 0; i <= stack_a->top; i++)
+        printf("%d:%d\n",i, stack_a->numbers[i]);
 
     free_stack(stack_a, stack_b);
     return (0);
