@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/13 11:06:36 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/14 19:39:32 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,8 @@ void	stack_flag_make(int max_or_min_value, struct stack	*stack_temp);
 bool check_rotate(int pivot, struct stack	*stack_a, struct stack	*stack_b);
 bool	check_sort_a(struct stack	stack_a);
 bool	check_sort_b(struct stack	stack_b);
+void	rotate(struct stack *stack_temp);
+bool	check_pivot(struct stack *stack_a);
+
 
 #endif

@@ -3,51 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   Push_swap_rev_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:43:06 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/12 20:01:56 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/14 19:26:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 void	rev_rotate(struct stack *stack_temp);
-void	rra(struct stack	*stack_a);
-void	rrb(struct stack	*stack_b);
+void	rra(struct stack *stack_a);
+void	rrb(struct stack *stack_b);
 
-void rrr(struct stack *stack_a, struct stack *stack_b)
+void	rrr(struct stack *stack_a, struct stack *stack_b)
 {
-    rev_rotate(stack_a);
-    rev_rotate(stack_b);
-    printf("rrr\n");
+	rev_rotate(stack_a);
+	rev_rotate(stack_b);
+	printf("rrr\n");
 }
 
-void rra(struct stack *stack_a)
+void	rra(struct stack *stack_a)
 {
-    rev_rotate(stack_a);
-    printf("rra\n");
+	rev_rotate(stack_a);
+	printf("rra\n");
 }
 
-void rrb(struct stack *stack_b)
+void	rrb(struct stack *stack_b)
 {
-    rev_rotate(stack_b);
-    printf("rrb\n");
+	rev_rotate(stack_b);
+	printf("rrb\n");
 }
 
 void	rev_rotate(struct stack *stack_temp)
 {
-    int	i;
-    int	temp;
+	int	i;
+	int	temp;
 
 	i = 0;
-    temp = stack_temp->numbers[i];
-    while (1)
-    {
-        stack_temp->numbers[i] = stack_temp->numbers[i + 1];
-        i++;
-        if (i > stack_temp->top)
-        	break ;
-    }
-    stack_temp->numbers[i + 1] = temp;
+	temp = stack_temp->numbers[i];
+	while (i < stack_temp->top)
+	{
+		stack_temp->numbers[i] = stack_temp->numbers[i + 1];
+		i++;
+	}
+	stack_temp->numbers[stack_temp->top] = temp;
 }
