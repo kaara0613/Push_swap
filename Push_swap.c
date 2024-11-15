@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/15 21:08:08 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/15 21:31:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void	push_swap(int pivot, struct stack *stack_a, struct stack *stack_b)
 		push_sort_b(pivot, stack_a, stack_b);
 	a = check_sort_a(*stack_a);//kokonokanouseigatakai
 	b = check_sort_b(*stack_b);
-	printf("%d\n%d\n", a, b);
+	// printf("%d\n%d\n", a, b);
 	if(!a || !b)
 	{
 		check_swap(pivot, stack_a, stack_b);
-		if(stack_a->numbers[stack_a->top] >= pivot)
-			push_swap(pivot, stack_a, stack_b);
+		// if(stack_a->numbers[stack_a->top] >= pivot)
+		// 	push_swap(pivot, stack_a, stack_b);
 	}
 	if (check_rotate(stack_a, stack_b))
 		return ;

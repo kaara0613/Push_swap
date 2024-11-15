@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/15 21:21:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/15 21:36:44 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ bool	check_sort_a(struct stack stack_a)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	if (check_pivot(&stack_a))
 		return (false);
-	printf("%d", stack_a.flag);
 	while (--stack_a.flag > 1)	//pivotができた時点でコピー
-		rev_rotate(&stack_a);
+		rev_rotate(&stack_a);//構造体自体は複製が利用されるがnumbersは値渡しでも実際のコピー元が操作される可能性があるためエラー
 	while (1)
 	{
 		if (stack_a.numbers[i] > stack_a.numbers[i + 1])
