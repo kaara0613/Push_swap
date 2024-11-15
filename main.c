@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 14:35:16 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/15 17:26:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ int	main(int argc, char **argv)
 	int pivot;
 	pivot = pivot_make(stack_a, stack_b);
 	push_swap(pivot, stack_a, stack_b);
-	for (int i = 0; i <= stack_a->top; i++)
-		printf("%d", stack_a->numbers[i]);
-	printf("\n");
-	for (int i = 0; i <= stack_b->top; i++)
-		printf("%d", stack_b->numbers[i]);
 	free_stack(stack_a, stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 22:25:28 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/15 19:03:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ bool pb(struct stack *stack_a, struct stack *stack_b);
 void ra(struct stack *stack_a);
 void rb(struct stack *stack_b);
 void rr(struct stack *stack_a, struct stack *stack_b);
-struct stack *rev_rotate(struct stack *stack_temp);
 // static void rra(int **stack_a)
 // static void rrb(int **stack_b)
 // static void rrr(struct stack *stack_a, struct stack *stack_b)
@@ -62,12 +61,12 @@ void ss(struct stack *stack_a, struct stack *stack_b);
 int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
 void	stack_flag_make(int max_or_min_value, struct stack	*stack_temp);
 
-bool check_rotate(int pivot, struct stack	*stack_a, struct stack	*stack_b);
+bool check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 bool	check_sort_a(struct stack	stack_a);
 bool	check_sort_b(struct stack	stack_b);
 struct stack *rotate(struct stack *stack_temp);
 bool	check_pivot(struct stack *stack_a);
-void rev_rotate_check(struct stack stack_temp);
+void rev_rotate(struct stack *stack_temp);
 
 
 #endif

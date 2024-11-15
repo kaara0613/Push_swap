@@ -6,16 +6,11 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:55:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 19:49:04 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/15 21:05:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
-
-void rara(struct stack *stack_a)
-{
-	ra(stack_a);
-}
 
 int	main(int argc, char **argv)
 {
@@ -28,9 +23,8 @@ int	main(int argc, char **argv)
 	stack_b = make_stack_b(stack_a);
 	int pivot;
 	pivot = pivot_make(stack_a, stack_b);
-	// push_swap(pivot, stack_a, stack_b);
-	// check_rotate(pivot, stack_a, stack_b);
-	sa(stack_a);
+	int a = check_sort_a(*stack_a);
+	printf("%d\n", a);
 	for (int i = 0; i <= stack_a->top; i++)
 		printf("%d", stack_a->numbers[i]);
 	printf("\n");

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 22:55:56 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/15 21:21:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,21 @@ bool	check_sort_a(struct stack stack_a)
 {
 	int	i;
 
-	i = 0;
-	while (stack_a.flag--)	//pivotができた時点でコピー
-		rev_rotate_check(stack_a);
+	i = 1;
+	if (check_pivot(&stack_a))
+		return (false);
+	printf("%d", stack_a.flag);
+	while (--stack_a.flag > 1)	//pivotができた時点でコピー
+		rev_rotate(&stack_a);
 	while (1)
 	{
 		if (stack_a.numbers[i] > stack_a.numbers[i + 1])
 			return (false);
 		i++;
-		if (i > stack_a.top)
-			break ;
+		if (i < stack_a.top)
+			return (true);
 	}
-	return (true);
+	return (false);
 }
 
 bool	check_sort_b(struct stack stack_b)
@@ -35,17 +38,19 @@ bool	check_sort_b(struct stack stack_b)
 	int	i;
 
 	i = 0;
-	while (stack_b.flag--)	//pivotができた時点でコピー
-		rev_rotate_check(stack_b);
+	if (stack_b.top <= 1)
+		return (true);
+	while (stack_b.flag-- > 1)	//pivotができた時点でコピー
+		rev_rotate(&stack_b);
 	while (1)
 	{
 		if (stack_b.numbers[i] < stack_b.numbers[i + 1])
-			return (true);
+			return (false);
 		i++;
-		if (i > stack_b.top)
+		if (i >= stack_b.top)
 			break ;
 	}
-	return (false);
+	return (true);
 }
 
 bool	check_pivot(struct stack *stack_a)
@@ -55,7 +60,7 @@ bool	check_pivot(struct stack *stack_a)
 	i = 0;
 	while (stack_a->numbers[stack_a->size])
 	{
-		if (stack_a->numbers[i++] == stack_a->max_or_min_value)
+		if (stack_a->numbers[i++] > stack_a->max_or_min_value)
 			return (true);
 	}
 	return (false);
