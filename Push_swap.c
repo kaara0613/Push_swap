@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 10:57:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 12:59:46 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,29 @@
 static void	push_sort_b(int pivot, struct stack *stack_a, struct stack *stack_b);
 static void	check_swap(int pivot, struct stack *stack_a, struct stack *stack_b);
 
-void	push_swap(int pivot, struct stack *stack_a, struct stack *stack_b)
+void	push_swap(struct stack *stack_a, struct stack *stack_b)
 {
-		static int i = 0;
-	for (int i = 0; i <= stack_a->top; i++)
-		printf("%d", stack_a->numbers[i]);
-	printf("\n");
-	for (int i = 0; i <= stack_b->top; i++)
-		printf("%d", stack_b->numbers[i]);
-	printf("\n");
-	i++;
-	if (i >=20)
-		return ;
 	bool	a;
 	bool	b;
+	int		pivot;
 
+	pivot = stack_b->max_or_min_value;
 	if (stack_a->numbers[stack_a->top] >= pivot)
 		push_sort_b(pivot, stack_a, stack_b);
-	a = check_sort_a(*stack_a, *stack_b);//kokonokanouseigatakai
+	a = check_sort_a(*stack_a, *stack_b);
 	b = check_sort_b(*stack_b);
-	// printf("%d\n%d\n", a, b);
-	if(!a || !b)
+	if (!a || !b)
 	{
 		check_swap(pivot, stack_a, stack_b);
-		if(stack_a->numbers[stack_a->top] >= pivot)
-			push_swap(pivot, stack_a, stack_b);
+		if (stack_a->numbers[stack_a->top] >= pivot)
+		{
+			push_swap(stack_a, stack_b);
+			return ;
+		}
 	}
 	if (check_rotate(stack_a, stack_b))
 		return ;
-	push_swap(pivot, stack_a, stack_b);
+	push_swap(stack_a, stack_b);
 }
 
 static void	push_sort_b(int pivot, struct stack *stack_a, struct stack *stack_b)
@@ -63,8 +57,6 @@ bool	check_rotate(struct stack *stack_a, struct stack *stack_b)
 
 	a = check_sort_a(*stack_a, *stack_b);
 	b = check_sort_b(*stack_b);
-    printf("%d\n", a);
-    printf("%d\n", b);
 	if (a == true && b == true)
 		return (true);
 	else if (b == false && a == false)

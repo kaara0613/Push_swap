@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 10:28:35 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 12:58:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ struct stack {
 };
 
 //push_swap.c
-void push_swap(int pivot, struct stack *stack_a, struct stack *stack_b);
+void push_swap(struct stack *stack_a, struct stack *stack_b);
 
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
