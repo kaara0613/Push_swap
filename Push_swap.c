@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 09:39:53 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 10:57:00 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	push_swap(int pivot, struct stack *stack_a, struct stack *stack_b)
 
 	if (stack_a->numbers[stack_a->top] >= pivot)
 		push_sort_b(pivot, stack_a, stack_b);
-	a = check_sort_a(*stack_a);//kokonokanouseigatakai
+	a = check_sort_a(*stack_a, *stack_b);//kokonokanouseigatakai
 	b = check_sort_b(*stack_b);
 	// printf("%d\n%d\n", a, b);
 	if(!a || !b)
@@ -61,15 +61,15 @@ bool	check_rotate(struct stack *stack_a, struct stack *stack_b)
 	bool	a;
 	bool	b;
 
-	a = check_sort_a(*stack_a);
+	a = check_sort_a(*stack_a, *stack_b);
 	b = check_sort_b(*stack_b);
     printf("%d\n", a);
     printf("%d\n", b);
-	if (!check_pivot(stack_a) && a == true && b == true)
+	if (a == true && b == true)
 		return (true);
-	else if (b == false && (a == false || check_pivot(stack_a)))
+	else if (b == false && a == false)
 		rr(stack_a, stack_b);
-	else if (a == false || check_pivot(stack_a))
+	else if (a == false)
 		ra(stack_a);
 	else if (b == false)
 		rb(stack_b);

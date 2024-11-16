@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/15 19:03:47 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 10:28:35 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
 void	stack_flag_make(int max_or_min_value, struct stack	*stack_temp);
 
 bool check_rotate(struct stack	*stack_a, struct stack	*stack_b);
-bool	check_sort_a(struct stack	stack_a);
+bool	check_sort_a(struct stack	stack_a, struct stack stack_b);
 bool	check_sort_b(struct stack	stack_b);
 struct stack *rotate(struct stack *stack_temp);
-bool	check_pivot(struct stack *stack_a);
+bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
 void rev_rotate(struct stack *stack_temp);
 
 

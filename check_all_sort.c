@@ -3,45 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   check_all_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 09:46:03 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 10:24:11 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-bool	check_sort_a(struct stack stack_a)
+bool	check_sort_a(struct stack stack_a, struct stack stack_b)
 {
 	int	i;
 	int temp;
 
 	i = 0;
 	temp = stack_a.flag;
-	if (check_pivot(&stack_a))
+	if (check_pivot(&stack_a, &stack_b))
 		return (false);
 	while (--stack_a.flag > 1)	//pivotができた時点でコピー
 		rev_rotate(&stack_a);//構造体自体は複製が利用されるがnumbersは値渡しでも実際のコピー元が操作される可能性があるためエラー
-	while (1)
+	while (i < stack_a.top)
 	{
 		if (stack_a.numbers[i] > stack_a.numbers[i + 1])
 		{
-			while (--stack_a.flag <= temp)
+			while (++stack_a.flag <= temp)
 				rotate(&stack_a);
 			return (false);
 		}
 		i++;
-		if (i < stack_a.top)
-		{
-			while (--stack_a.flag <= temp)
-				rotate(&stack_a);
-			return (true);
-		}
 	}
-	while (--stack_a.flag <= temp)
+	while (++stack_a.flag <= temp)
 		rotate(&stack_a);
-	return (false);
+	return (true);
 }
 
 bool	check_sort_b(struct stack stack_b)
@@ -55,7 +49,7 @@ bool	check_sort_b(struct stack stack_b)
 		return (true);
 	while (stack_b.flag-- > 1)	//pivotができた時点でコピー
 		rev_rotate(&stack_b);
-	while (i > stack_b.top)
+	while (i < stack_b.top)
 	{
 		if (stack_b.numbers[i] < stack_b.numbers[i + 1])
 		{
@@ -70,15 +64,16 @@ bool	check_sort_b(struct stack stack_b)
 	return (true);
 }
 
-bool	check_pivot(struct stack *stack_a)
+bool	check_pivot(struct stack *stack_a, struct stack *stack_b)
 {
 	int	i;
 
 	i = 0;
-	while (stack_a->numbers[stack_a->size])
+	while (i <= stack_a->top)
 	{
-		if (stack_a->numbers[i++] > stack_a->max_or_min_value)
+		if (stack_a->numbers[i] >= stack_b->max_or_min_value)
 			return (true);
+		i++;
 	}
 	return (false);
 }
