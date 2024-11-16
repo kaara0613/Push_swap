@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:55:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 15:55:29 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 17:43:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,8 @@ int	main(int argc, char **argv)
 	free_stack(stack_a, stack_b);
 	return (0);
 }
+
+//seikou
+// 3 5 10 9 2 1 7 8 6 4
+//sippai
+//

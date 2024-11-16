@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 17:13:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 17:59:33 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,23 @@ static void	check_swap(struct stack *stack_a, struct stack *stack_b);
 
 void	push_swap(struct stack *stack_a, struct stack *stack_b)
 {
-	static int i;
-	if (i++ >= 30)
-		return ;
+	// bool	a1;
+	// bool	b1;
+	// 	stack_flag_make(stack_a->max_or_min_value, stack_a);
+	// stack_flag_make(stack_b->max_or_min_value, stack_b);
+	// a1 = check_sort_a(*stack_a, *stack_b);
+	// b1 = check_sort_b(*stack_b);
+	for (int i = 0; i <= stack_a->top; i++)
+		printf("%d,", stack_a->numbers[i]);
+	printf("\n");
+	for (int i = 0; i <= stack_b->top; i++)
+		printf("%d,", stack_b->numbers[i]);
+		
+	// printf("%d\n%d\n", a1, b1);
+			printf("\n");
+	printf("\n");
 
-	// for (int i = 0; i <= stack_a->top; i++)
-	// 	printf("%d,", stack_a->numbers[i]);
-	// printf("\n");
-	// for (int i = 0; i <= stack_b->top; i++)
-	// 	printf("%d,", stack_b->numbers[i]);
-	// printf("\n");
+
 
 	bool	a;
 	bool	b;
@@ -47,7 +54,7 @@ void	push_swap(struct stack *stack_a, struct stack *stack_b)
 		}
 	}
 	if (check_rotate(stack_a, stack_b))
-		return (push_swap(stack_a, stack_b));
+		return ;
 	push_swap(stack_a, stack_b);
 }
 
@@ -70,7 +77,6 @@ bool	check_rotate(struct stack *stack_a, struct stack *stack_b)
 	stack_flag_make(stack_b->max_or_min_value, stack_b);
 	a = check_sort_a(*stack_a, *stack_b);
 	b = check_sort_b(*stack_b);
-	// printf("%d\n%d\n, a, b");
 	if (a == true && b == true)
 		return (true);
 	else if (b == false && a == false)//revしない方の条件式も追加
@@ -86,17 +92,10 @@ static void	check_swap(struct stack *stack_a, struct stack *stack_b)
 {
 	int a;
 	int b;
-	// if (stack_b->top < 2)
-	// {
-	// 	if (stack_a->numbers[stack_a->top - 1] >= pivot)
-	// 		sa(stack_a);
-	// 	return ;
-	// }
 	stack_flag_make(stack_a->max_or_min_value, stack_a);
 	stack_flag_make(stack_b->max_or_min_value, stack_b);
 	a = check_sort_a(*stack_a, *stack_b);//revするかしないか選択制に変更
 	b = check_sort_b(*stack_b);
-	// printf("%d", b);
 	if (!a && stack_a->numbers[stack_a->top - 1] > stack_a->numbers[stack_a->top]
 		&& stack_b->numbers[stack_b->top - 1] < stack_b->numbers[stack_b->top])
 		ss(stack_a, stack_b);
