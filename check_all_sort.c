@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_all_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/15 21:36:44 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/16 09:46:03 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 bool	check_sort_a(struct stack stack_a)
 {
 	int	i;
+	int temp;
 
 	i = 0;
+	temp = stack_a.flag;
 	if (check_pivot(&stack_a))
 		return (false);
 	while (--stack_a.flag > 1)	//pivotができた時点でコピー
@@ -24,31 +26,47 @@ bool	check_sort_a(struct stack stack_a)
 	while (1)
 	{
 		if (stack_a.numbers[i] > stack_a.numbers[i + 1])
+		{
+			while (--stack_a.flag <= temp)
+				rotate(&stack_a);
 			return (false);
+		}
 		i++;
 		if (i < stack_a.top)
+		{
+			while (--stack_a.flag <= temp)
+				rotate(&stack_a);
 			return (true);
+		}
 	}
+	while (--stack_a.flag <= temp)
+		rotate(&stack_a);
 	return (false);
 }
 
 bool	check_sort_b(struct stack stack_b)
 {
 	int	i;
+	int temp;
 
 	i = 0;
+	temp = stack_b.flag;
 	if (stack_b.top <= 1)
 		return (true);
 	while (stack_b.flag-- > 1)	//pivotができた時点でコピー
 		rev_rotate(&stack_b);
-	while (1)
+	while (i > stack_b.top)
 	{
 		if (stack_b.numbers[i] < stack_b.numbers[i + 1])
+		{
+			while (stack_b.flag++ <= temp)
+				rotate(&stack_b);
 			return (false);
+		}
 		i++;
-		if (i >= stack_b.top)
-			break ;
 	}
+	while (stack_b.flag++ <= temp)
+		rotate(&stack_b);
 	return (true);
 }
 
