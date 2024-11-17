@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/16 15:01:10 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/17 17:30:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ struct stack {
 };
 
 //push_swap.c
-void push_swap(struct stack *stack_a, struct stack *stack_b);
+void push_swap(int depth, struct stack *stack_a, struct stack *stack_b);
 
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
@@ -61,9 +61,9 @@ void ss(struct stack *stack_a, struct stack *stack_b);
 int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
 void	stack_flag_make(int max_or_min_value, struct stack	*stack_temp);
 
-bool check_rotate(struct stack	*stack_a, struct stack	*stack_b);
-bool	check_sort_a(struct stack	stack_a, struct stack stack_b);
-bool	check_sort_b(struct stack	stack_b);
+void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
+bool	check_sort_a(struct stack	*stack_a, struct stack *stack_b);
+bool	check_sort_b(struct stack	*stack_b);
 void    rotate(struct stack *stack_temp);
 bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
 void    rev_rotate(struct stack *stack_temp);
