@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/17 18:09:05 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/17 20:35:32 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,28 @@ int	pivot_make(struct stack *stack_a, struct stack *stack_b)
 	return (pivot);
 }
 
+// void	stack_flag_make(int value, struct stack *stack_temp)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	if (stack_temp->top < 0 || stack_temp->numbers[stack_temp->top] == value)
+// 	{
+// 		stack_temp->flag = -1;
+// 		return ;
+// 	}
+// 	else
+// 	while (i <= stack_temp->top)
+// 	{
+// 		if (stack_temp->numbers[i] == value)
+// 		{
+// 			stack_temp->flag = i + 1;
+// 			return ;
+// 		}
+// 		i++;
+// 	}
+// }
+
 void	stack_flag_make(int value, struct stack *stack_temp)
 {
 	int	i;
@@ -39,10 +61,9 @@ void	stack_flag_make(int value, struct stack *stack_temp)
 	{
 		if (stack_temp->numbers[i] == value)
 		{
-			stack_temp->flag = i + 1;
+			stack_temp->flag = i;
 			return ;
 		}
 		i++;
 	}
 }
-

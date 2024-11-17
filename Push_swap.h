@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/17 17:30:26 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/17 19:13:03 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ bool	check_sort_b(struct stack	*stack_b);
 void    rotate(struct stack *stack_temp);
 bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
 void    rev_rotate(struct stack *stack_temp);
+bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b);
+bool	check_sort_per_b(struct stack *stack_b);
 
 
 #endif

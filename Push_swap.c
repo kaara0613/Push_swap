@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/17 18:04:28 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/17 20:55:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push_swap(int depth, struct stack *stack_a, struct stack *stack_b)
 {
 	static int i = 0;
 	i++;
-	if (i >= 60)
+	if (i >= 50)
 		return ;
 	// for (int i = 0; i <= stack_a->top; i++)
 	// 	printf("%d,", stack_a->numbers[i]);
@@ -71,12 +71,16 @@ void	check_rotate(struct stack *stack_a, struct stack *stack_b)
 {
 	bool	a;
 	bool	b;
+	bool	per_a;
+	bool	per_b;
 
 	if ((stack_a->numbers[stack_a->top] >= stack_b->max_or_min_value))
 		return ;
 	a = check_sort_a(stack_a, stack_b);
 	b = check_sort_b(stack_b);
-	if (!b && !a)//revしない方の条件式も追加
+	per_a = check_sort_per_a(stack_a, stack_b);
+	per_b = check_sort_per_b(stack_a);
+	if ((!a) && (!b))//revしない方の条件式も追加
 		rr(stack_a, stack_b);
 	else if (!a)
 		ra(stack_a);
@@ -90,12 +94,12 @@ void	check_swap(struct stack *stack_a, struct stack *stack_b)
 	int b;
 	a = check_sort_a(stack_a, stack_b);//revするかしないか選択制に変更
 	b = check_sort_b(stack_b);
-	if (!a && !b && stack_a->numbers[stack_a->top - 1] > stack_a->numbers[stack_a->top]
-		&& stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top])
+	if ((!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top]) && !a)
+		&& (!(stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top]) && !b))
 		ss(stack_a, stack_b);
-	else if (!a && stack_a->numbers[stack_a->top - 1] > stack_a->numbers[stack_a->top])
+	else if (!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top]) && !a)
 		sa(stack_a);
-	else if (!b && stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top])
+	else if (!(stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top]) && !b)
 		sb(stack_b);
 }
 
