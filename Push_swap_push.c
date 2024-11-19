@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:24:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 19:17:38 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/19 11:51:30 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	pa(struct stack *stack_a, struct stack *stack_b)
 		return (false);
 	}
 	put(temp, stack_a);
-	printf("pa");
+	printf("pa\n");
 	return (true);
 }
 

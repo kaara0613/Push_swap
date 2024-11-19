@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/18 11:37:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/19 13:11:10 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	check_sort_a(struct stack *stack_a, struct stack *stack_b)
 		return (true);
 	while (i < stack_a->flag - 1)
 	{
-		if (!(stack_a->numbers[i] < stack_a->numbers[i + 1]) && (stack_b->numbers[1] != stack_b->min_value))
+		if (!(stack_a->numbers[i] < stack_a->numbers[i + 1]))
 			return (false);
 		i++;
 	}
@@ -58,7 +58,7 @@ bool	check_sort_b(struct stack *stack_b)
 		return (true);
 	while (i < stack_b->flag - 1)
 	{
-		if (!(stack_b->numbers[i] > stack_b->numbers[i + 1]) && (stack_b->numbers[1] != stack_b->min_value))
+		if (!(stack_b->numbers[i] > stack_b->numbers[i + 1]))
 			return (false);
 		i++;
 	}
