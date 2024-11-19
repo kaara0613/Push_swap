@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/18 16:20:29 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:43:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ void    rev_rotate(struct stack *stack_temp);
 bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b);
 bool	check_sort_per_b(struct stack *stack_b);
 void insertion_sort(struct stack *stack_a, struct stack *stack_b);
+void insertion_sort_b(struct stack *stack_a, struct stack *stack_b);
+// static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
+
 
 #endif

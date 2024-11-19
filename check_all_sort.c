@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/19 13:11:10 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/19 17:30:17 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b)
 	int	i;
 
 	i = 0;
+	stack_flag_make(stack_a->min_value, stack_a);
 	if (check_pivot(stack_a, stack_b))
 		return (false);
 	while (i < stack_a->top)
@@ -108,6 +109,7 @@ bool	check_sort_per_b(struct stack *stack_b)
 	int	i;
 
 	i = 0;
+	stack_flag_make(stack_b->min_value, stack_b);
 	while (i < stack_b->top)
 	{
 		if (!(stack_b->numbers[i] > stack_b->numbers[i + 1]))
