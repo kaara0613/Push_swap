@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 13:18:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/18 14:26:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ struct stack	*make_stack_a(int argc, char **argv)
 	stack_a->numbers = (int *)malloc(sizeof(int) * stack_a->size);
 	if (!stack_a->numbers)
 		return (free(stack_a), NULL);
+	// bzero(stack_a->numbers, stack_a->size - 1);
 	while (count > 0)
 		stack_a->numbers[++stack_a->top] = atoi(argv[count--]);
 	return (stack_a);
@@ -39,6 +40,7 @@ struct stack	*make_stack_b(struct stack *stack_a)
 	if (!stack_b)
 		return (NULL);
 	stack_b->size = stack_a->size;
+	// bzero(stack_b->numbers, stack_b->size - 1);
 	stack_b->numbers = (int *)malloc(sizeof(int) * stack_b->size);
 	if (!stack_b->numbers)
 		return (free(stack_a), NULL);

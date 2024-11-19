@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/17 19:13:03 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/18 16:20:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
 
 struct stack {
     int *numbers;
     int top;
     int size;
     int flag;//max_or_min_valueがtopから離れている距離
-    int max_or_min_value;
+    int min_value;
+    int max_value;
 };
 
 //push_swap.c
-void push_swap(int depth, struct stack *stack_a, struct stack *stack_b);
+void push_swap(struct stack *stack_a, struct stack *stack_b);
 
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
@@ -48,9 +50,9 @@ bool pb(struct stack *stack_a, struct stack *stack_b);
 void ra(struct stack *stack_a);
 void rb(struct stack *stack_b);
 void rr(struct stack *stack_a, struct stack *stack_b);
-// static void rra(int **stack_a)
-// static void rrb(int **stack_b)
-// static void rrr(struct stack *stack_a, struct stack *stack_b)
+void rra(struct stack *stack_a);
+void rrb(struct stack *stack_b);
+void rrr(struct stack *stack_a, struct stack *stack_b);
 
 //Push_swap_swap.c
 void sa(struct stack *stack_a);
@@ -59,7 +61,7 @@ void ss(struct stack *stack_a, struct stack *stack_b);
 
 // make_pivot.c
 int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
-void	stack_flag_make(int max_or_min_value, struct stack	*stack_temp);
+void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 bool	check_sort_a(struct stack	*stack_a, struct stack *stack_b);
@@ -69,6 +71,6 @@ bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
 void    rev_rotate(struct stack *stack_temp);
 bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b);
 bool	check_sort_per_b(struct stack *stack_b);
-
+void insertion_sort(struct stack *stack_a, struct stack *stack_b);
 
 #endif
