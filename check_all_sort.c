@@ -6,18 +6,14 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/19 17:30:17 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 11:38:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "push_swap.h"
 
 bool	check_sort_a(struct stack *stack_a, struct stack *stack_b)
 {
-	// for (int i = 0; i <= stack_a->top; i++)
-	// 	printf("%d,", stack_a->numbers[i]);
-	// printf("\n");
-
 	int	i;
 
 	i = 0;
@@ -45,9 +41,6 @@ bool	check_sort_a(struct stack *stack_a, struct stack *stack_b)
 
 bool	check_sort_b(struct stack *stack_b)
 {
-	// for (int i = 0; i <= stack_b->top; i++)
-	// 	printf("%d,", stack_b->numbers[i]);
-	// printf("\n");
 	int	i;
 
 	i = 0;

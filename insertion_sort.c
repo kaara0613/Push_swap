@@ -6,11 +6,11 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:18:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/19 18:01:06 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 12:06:25 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "push_swap.h"
 
 static void insertion_sort_a(struct stack *stack_a, struct stack *stack_b);
 static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
@@ -42,6 +42,8 @@ static void insertion_sort_a(struct stack *stack_a, struct stack *stack_b)
 
 void insertion_sort_b(struct stack *stack_a, struct stack *stack_b)
 {
+	if (stack_a->numbers[stack_a->top] > stack_b->max_value)
+		stack_b->max_value = stack_a->numbers[stack_a->top];
 	if (stack_b->top < 2 || stack_a->numbers[stack_a->top] == stack_b->min_value)
 	{
 		pb(stack_a, stack_b);
@@ -66,8 +68,8 @@ void insertion_sort_b(struct stack *stack_a, struct stack *stack_b)
 	}
 	else
 	{
-		while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top]){
-			rrb(stack_b);}
+		while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top])
+			rrb(stack_b);
 	}
 	if (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top]
 		&& stack_a->numbers[stack_a->top] > stack_b->numbers[0])

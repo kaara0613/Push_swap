@@ -6,11 +6,11 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:08:39 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/14 13:20:24 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 11:37:35 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "push_swap.h"
 
 bool	is_empty(struct stack *stack_temp)
 {

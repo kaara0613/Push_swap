@@ -6,11 +6,11 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/19 18:03:18 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 11:38:17 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "push_swap.h"
 
 int	pivot_make(struct stack *stack_a, struct stack *stack_b)
 {

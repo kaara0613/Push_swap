@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/19 16:47:35 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 11:38:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "push_swap.h"
 
 // static void	check_swap(struct stack *stack_a, struct stack *stack_b);
 
-void	push_swap(struct stack *stack_a, struct stack *stack_b)
+void	partition_pivot(struct stack *stack_a, struct stack *stack_b)
 {
 	bool	a;
-	bool	b;
-
-	static int i = 0;
-	if (i++ >= 20)
-		return ;
 
 	a = check_sort_a(stack_a, stack_b);
-	b = check_sort_b(stack_b);
 	if (!check_pivot(stack_a, stack_b))
 		return ;
 	if (stack_a->numbers[stack_a->top] >= stack_b->min_value)
@@ -36,7 +30,7 @@ void	push_swap(struct stack *stack_a, struct stack *stack_b)
 		insertion_sort_b(stack_a, stack_b);
 	if(!a)
 		ra(stack_a);
-	push_swap(stack_a, stack_b);
+	partition_pivot(stack_a, stack_b);
 }
 
 // void	check_rotate(struct stack *stack_a, struct stack *stack_b)

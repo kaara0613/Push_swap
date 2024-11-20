@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/19 17:43:36 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 11:48:41 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,23 @@ struct stack {
 };
 
 //push_swap.c
-void push_swap(struct stack *stack_a, struct stack *stack_b);
+void	partition_pivot(struct stack *stack_a, struct stack *stack_b);
+void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
+
+//insertion_sort.c
+void insertion_sort(struct stack *stack_a, struct stack *stack_b);
+void insertion_sort_b(struct stack *stack_a, struct stack *stack_b);
+
+//check_all_sort.c
+bool	check_sort_a(struct stack	*stack_a, struct stack *stack_b);
+bool	check_sort_b(struct stack	*stack_b);
+bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b);
+bool	check_sort_per_b(struct stack *stack_b);
+bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
+
+// make_pivot.c
+int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
+void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
@@ -42,38 +58,26 @@ bool is_full(struct stack *stack_temp);
 bool put(int	input_value, struct stack *stack_temp);
 int pop(struct stack *stack_temp);
 
-//Push_swap_push.c
+//push.c
 bool pa(struct stack *stack_a, struct stack *stack_b);
 bool pb(struct stack *stack_a, struct stack *stack_b);
 
-//Push_swap_rotate.c
+//rotate.c
 void ra(struct stack *stack_a);
 void rb(struct stack *stack_b);
 void rr(struct stack *stack_a, struct stack *stack_b);
+void    rotate(struct stack *stack_temp);
+
+//rev_rotate.c
 void rra(struct stack *stack_a);
 void rrb(struct stack *stack_b);
 void rrr(struct stack *stack_a, struct stack *stack_b);
+void    rev_rotate(struct stack *stack_temp);
 
-//Push_swap_swap.c
+//swap.c
 void sa(struct stack *stack_a);
 void sb(struct stack *stack_b);
 void ss(struct stack *stack_a, struct stack *stack_b);
 
-// make_pivot.c
-int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
-void	stack_flag_make(int min_value, struct stack	*stack_temp);
-
-void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
-bool	check_sort_a(struct stack	*stack_a, struct stack *stack_b);
-bool	check_sort_b(struct stack	*stack_b);
-void    rotate(struct stack *stack_temp);
-bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
-void    rev_rotate(struct stack *stack_temp);
-bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b);
-bool	check_sort_per_b(struct stack *stack_b);
-void insertion_sort(struct stack *stack_a, struct stack *stack_b);
-void insertion_sort_b(struct stack *stack_a, struct stack *stack_b);
 // static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
-
-
 #endif
