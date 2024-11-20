@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:48:41 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 15:39:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,28 @@
 #include <strings.h>
 
 struct stack {
-    int *numbers;
-    int top;
-    int size;
-    int flag;//max_or_min_valueがtopから離れている距離
-    int min_value;
-    int max_value;
+	int *numbers;
+	int top;
+	int size;
+	int flag;//max_or_min_valueがtopから離れている距離
+	int min_value;
+	int max_value;
 };
 
 //push_swap.c
-void	partition_pivot(struct stack *stack_a, struct stack *stack_b);
+void	partition_pivot(int pivot, struct stack *stack_a, struct stack *stack_b);
 void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 
 //insertion_sort.c
-void insertion_sort(struct stack *stack_a, struct stack *stack_b);
+void insertion_sort(int pivot, struct stack *stack_a, struct stack *stack_b);
 void insertion_sort_b(struct stack *stack_a, struct stack *stack_b);
 
 //check_all_sort.c
-bool	check_sort_a(struct stack	*stack_a, struct stack *stack_b);
+bool	check_sort_a(int pivot, struct stack *stack_a);
 bool	check_sort_b(struct stack	*stack_b);
-bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b);
+bool	check_sort_per_a(int pivot, struct stack *stack_a);
 bool	check_sort_per_b(struct stack *stack_b);
-bool	check_pivot(struct stack *stack_a, struct stack *stack_b);
+bool	check_pivot(int pivot, struct stack *stack_a);
 
 // make_pivot.c
 int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);

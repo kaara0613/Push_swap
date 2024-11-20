@@ -6,21 +6,21 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:38:29 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 15:50:08 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	check_sort_a(struct stack *stack_a, struct stack *stack_b)
+bool	check_sort_a(int pivot, struct stack *stack_a)
 {
 	int	i;
 
 	i = 0;
 	stack_flag_make(stack_a->min_value, stack_a);
-	if (check_pivot(stack_a, stack_b))
+	if (check_pivot(pivot, stack_a))
 		return (false);
-	if (stack_a->flag == 0 && check_sort_per_a(stack_a, stack_b))
+	if (stack_a->flag == 0 && check_sort_per_a(pivot, stack_a))
 		return (true);
 	while (i < stack_a->flag - 1)
 	{
@@ -66,27 +66,26 @@ bool	check_sort_b(struct stack *stack_b)
 	return (true);
 }
 
-bool	check_pivot(struct stack *stack_a, struct stack *stack_b)
+bool	check_pivot(int pivot, struct stack *stack_a)
 {
 	int	i;
 
 	i = 0;
 	while (i <= stack_a->top)
 	{
-		if (stack_a->numbers[i] >= stack_b->min_value)
+		if (stack_a->numbers[i] >= pivot)
 			return (true);
 		i++;
 	}
 	return (false);
 }
 
-bool	check_sort_per_a(struct stack *stack_a, struct stack *stack_b)
+bool	check_sort_per_a(int pivot, struct stack *stack_a)
 {
 	int	i;
 
 	i = 0;
-	stack_flag_make(stack_a->min_value, stack_a);
-	if (check_pivot(stack_a, stack_b))
+	if (check_pivot(pivot, stack_a))
 		return (false);
 	while (i < stack_a->top)
 	{
@@ -102,7 +101,8 @@ bool	check_sort_per_b(struct stack *stack_b)
 	int	i;
 
 	i = 0;
-	stack_flag_make(stack_b->min_value, stack_b);
+	if (stack_b->top == 0)
+        return (true);
 	while (i < stack_b->top)
 	{
 		if (!(stack_b->numbers[i] > stack_b->numbers[i + 1]))

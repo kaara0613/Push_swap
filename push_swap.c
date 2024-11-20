@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:38:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 15:48:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 // static void	check_swap(struct stack *stack_a, struct stack *stack_b);
 
-void	partition_pivot(struct stack *stack_a, struct stack *stack_b)
+void	partition_pivot(int pivot, struct stack *stack_a, struct stack *stack_b)
 {
-	bool	a;
-
-	a = check_sort_a(stack_a, stack_b);
-	if (!check_pivot(stack_a, stack_b))
+	static int i = 0;
+	if (i++ >= 30)
+		return;
+	if (!check_pivot(pivot, stack_a))
 		return ;
-	if (stack_a->numbers[stack_a->top] >= stack_b->min_value)
+	if (stack_a->numbers[stack_a->top] >= pivot)
 		insertion_sort_b(stack_a, stack_b);
-	a = check_sort_a(stack_a, stack_b);
-	if (!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top]) && !a)
+	if (!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top])
+		&& !(stack_a->numbers[stack_a->top] >= pivot))
 		sa(stack_a);
-	if ((stack_a->numbers[stack_a->top] >= stack_b->min_value))
-		insertion_sort_b(stack_a, stack_b);
-	if(!a)
+	else if(!(stack_a->numbers[stack_a->top] >= pivot))
 		ra(stack_a);
-	partition_pivot(stack_a, stack_b);
+	partition_pivot(pivot, stack_a, stack_b);
 }
 
 // void	check_rotate(struct stack *stack_a, struct stack *stack_b)

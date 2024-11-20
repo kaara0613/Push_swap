@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:41:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/20 15:48:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(int argc, char **argv)
 	stack_b = make_stack_b(stack_a);
 	int pivot;
 	pivot = pivot_make(stack_a, stack_b);
-	partition_pivot(stack_a, stack_b);
-	insertion_sort(stack_a, stack_b);
+	partition_pivot(pivot, stack_a, stack_b);
+	// insertion_sort(pivot, stack_a, stack_b);
 	free_stack(stack_a, stack_b);
 	return (0);
 }
