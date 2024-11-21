@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   insertion_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:18:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 15:45:53 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 13:57:35 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int check_num_rot_a(struct stack *stack_a, struct stack *stack_b);
+static void	check_num_rot_b(struct stack *stack_a, struct stack *stack_b);
 static void insertion_sort_a(int pivot, struct stack *stack_a, struct stack *stack_b);
 static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
-static void max_min_check(struct stack *stack_a, struct stack *stack_b);
+static void max_min_value(struct stack *stack_a, struct stack *stack_b);
 
 void insertion_sort(int pivot, struct stack *stack_a, struct stack *stack_b)
 {
@@ -24,17 +26,27 @@ void insertion_sort(int pivot, struct stack *stack_a, struct stack *stack_b)
 
 static void insertion_sort_a(int pivot, struct stack *stack_a, struct stack *stack_b)
 {
+	int num_rot;
+
 	if (check_sort_a(pivot, stack_a))
 		return ;
 	while ((stack_a->numbers[stack_a->top] == stack_a->min_value)
 		|| (stack_a->numbers[stack_a->top] == stack_a->max_value)
 		|| (stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1]))
-		ra (stack_a);//rbも一緒にできる場合を実装したい
-	//先にsaしてチェックしたほうがいいかも
-	if(!(stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1]))
+		ra (stack_a);
+	if(!(stack_a->numbers[stack_a->top] < stack_a->numbers[stack_a->top - 1]))
 		pb(stack_a, stack_b);
-	while (stack_b->numbers[stack_b->top] < stack_a->numbers[stack_a->top])//make_flagでraかrra考える
-		ra(stack_a);
+	num_rot = check_num_rot_a(stack_a, stack_b);
+	if (num_rot < 0)
+	{
+		while (num_rot++ <= 0)
+			rra(stack_a);
+	}
+	else
+	{
+		while (num_rot-- >= 0)
+			ra(stack_a);
+	}
 	pa(stack_a, stack_b);
 	insertion_sort_a(pivot, stack_a, stack_b);
 }
@@ -44,29 +56,45 @@ void insertion_sort_b(struct stack *stack_a, struct stack *stack_b)
 	if (stack_b->top <= 1)
 	{
 		pb(stack_a, stack_b);
+		if (stack_b->numbers[stack_b->top] > stack_b->max_value)
+			stack_b->max_value = stack_b->numbers[stack_b->top];
+		if (stack_b->numbers[stack_b->top] < stack_b->min_value)
+			stack_b->min_value = stack_b->numbers[stack_b->top];
 		if (stack_b->top == 1
-			&& stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])
+			&& stack_b->numbers[stack_b->top] < stack_b->numbers[stack_b->top - 1])
 			sb(stack_b);
 		return ;
 	}
 	if ((stack_a->numbers[stack_a->top] > stack_b->max_value)
 		|| (stack_a->numbers[stack_a->top] < stack_b->min_value))
-		max_min_check(stack_a, stack_b);
-	else if (stack_a->numbers[stack_a->top] > stack_b->numbers[stack_b->top])
 	{
-		while (stack_a->numbers[stack_a->top] > stack_b->numbers[stack_b->top])
-			rb(stack_b);
+		max_min_value(stack_a, stack_b);
+		return ;
+	}
+	check_num_rot_b(stack_a, stack_b);
+	pb(stack_a, stack_b);
+}
+
+static void max_min_value(struct stack *stack_a, struct stack *stack_b)
+{
+	stack_flag_make(stack_b->max_value, stack_b);
+	if (stack_a->numbers[stack_a->top] > stack_b->max_value)
+		stack_b->max_value = stack_a->numbers[stack_a->top];
+	else if (stack_a->numbers[stack_a->top] < stack_b->min_value)
+		stack_b->min_value = stack_a->numbers[stack_a->top];
+	if (stack_b->top / 2 > stack_b->flag)
+	{
+		while (stack_b->flag-- >= 0)
+			rrb(stack_b);
 	}
 	else
 	{
-		while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top])
-			rrb(stack_b);
+		while (stack_b->top - stack_b->flag++ > 0)
+			rb(stack_b);
 	}
-	if (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top])
-		pb(stack_a, stack_b);
-	// if (stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])
-	// 	rb(stack_b);
-	return ;
+	pb(stack_a, stack_b);
+	if (stack_b->numbers[stack_b->top] == stack_b->min_value)
+		rb(stack_b);
 }
 
 static void	sorted_rev(struct stack *stack_a, struct stack *stack_b)
@@ -83,7 +111,7 @@ static void	sorted_rev(struct stack *stack_a, struct stack *stack_b)
 	}
 	if (stack_b->top / 2 > stack_b->flag)
 	{
-		while (stack_b->flag-- >= 0)
+		while (stack_b->flag-- > 0)
 			rrb(stack_b);
 	}
 	else
@@ -95,22 +123,48 @@ static void	sorted_rev(struct stack *stack_a, struct stack *stack_b)
 		pa(stack_a, stack_b);
 }
 
-static void max_min_check(struct stack *stack_a, struct stack *stack_b)
+static int check_num_rot_a(struct stack *stack_a, struct stack *stack_b)
 {
-	if (stack_a->numbers[stack_a->top] > stack_b->max_value)
-		stack_b->max_value = stack_a->numbers[stack_a->top];
-	if (stack_a->numbers[stack_a->top] < stack_b->min_value)
-		stack_b->min_value = stack_a->numbers[stack_a->top];
-	if (stack_a->numbers[stack_a->top] > stack_b->numbers[stack_b->top])
+	int num_rot;
+	int temp;
+
+	num_rot = 0;
+	while (stack_b->numbers[stack_b->top] > stack_a->numbers[stack_a->top]
+			&& stack_a->numbers[stack_a->top] < stack_a->numbers[0])
 	{
-		while (stack_a->numbers[stack_a->top] > stack_b->numbers[stack_b->top]
-			&& !(check_sort_per_b(stack_b)))
+		rotate(stack_a);
+		temp = num_rot++;
+	}
+	while (temp-- >= 0)
+		rev_rotate(stack_a);
+	if (num_rot > stack_a->top / 2)
+		num_rot = 0 - (stack_a->top - num_rot);
+	return (num_rot);
+}
+
+static void	check_num_rot_b(struct stack *stack_a, struct stack *stack_b)
+{
+	int num_rot;
+	int temp;
+
+	num_rot = 0;
+	while (stack_b->numbers[stack_b->top] < stack_a->numbers[stack_a->top])//&& stack_a->numbers[stack_a->top] > stack_a->numbers[0])
+	{
+		rotate(stack_a);
+		temp = num_rot++;
+	}
+	while (temp-- >= 0)
+		rev_rotate(stack_a);
+	if (num_rot > stack_a->top / 2)
+		num_rot = 0 - (stack_a->top - num_rot);
+	if (num_rot < 0)
+	{
+		while (num_rot++ < 0)
 			rb(stack_b);
 	}
 	else
 	{
-		while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top]
-			&& !(check_sort_per_b(stack_b)))
+		while (--num_rot > 0)
 			rrb(stack_b);
 	}
 }
