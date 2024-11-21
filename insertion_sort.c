@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:18:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/21 18:31:17 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 19:07:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,9 +154,9 @@ static void	check_num_rot_b(struct stack *stack_a, struct stack *stack_b)
 		temp = num_rot++;
 	}
 	while (temp-- >= 0)
-		rev_rotate(stack_a);
-	if (num_rot > stack_a->top / 2)
-		num_rot = 0 - (stack_a->top - num_rot);
+		rev_rotate(stack_b);
+	if (num_rot > stack_b->top / 2)
+		num_rot = 0 - (stack_b->top - num_rot);
 	printf("%d\n", num_rot);
 	if (num_rot < 0)
 	{
