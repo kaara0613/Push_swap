@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:18:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/21 19:07:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 21:20:39 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ static void insertion_sort_a(int pivot, struct stack *stack_a, struct stack *sta
 
 void insertion_sort_b(struct stack *stack_a, struct stack *stack_b)
 {
-	if (stack_b->top <= 1)
+	if (stack_b->top < 1)
 	{
 		pb(stack_a, stack_b);
 		if (stack_b->numbers[stack_b->top] > stack_b->max_value)
 			stack_b->max_value = stack_b->numbers[stack_b->top];
 		if (stack_b->numbers[stack_b->top] < stack_b->min_value)
 			stack_b->min_value = stack_b->numbers[stack_b->top];
-		if (stack_b->top == 1
+		if (stack_b->top >= 1
 			&& stack_b->numbers[stack_b->top] < stack_b->numbers[stack_b->top - 1])
 			sb(stack_b);
 		return ;
@@ -156,7 +156,7 @@ static void	check_num_rot_b(struct stack *stack_a, struct stack *stack_b)
 	while (temp-- >= 0)
 		rev_rotate(stack_b);
 	if (num_rot > stack_b->top / 2)
-		num_rot = 0 - (stack_b->top - num_rot);
+		num_rot = 0 - ((stack_b->top + 1) - num_rot);
 	printf("%d\n", num_rot);
 	if (num_rot < 0)
 	{
