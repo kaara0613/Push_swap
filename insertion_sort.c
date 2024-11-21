@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:18:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/21 21:20:39 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 22:00:07 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void max_min_value(struct stack *stack_a, struct stack *stack_b)
 		stack_b->min_value = stack_a->numbers[stack_a->top];
 	if (stack_b->top / 2 > stack_b->flag)
 	{
-		while (stack_b->flag-- > 0)
+		while (stack_b->flag-- >= 0)
 			rrb(stack_b);
 	}
 	else
@@ -148,7 +148,8 @@ static void	check_num_rot_b(struct stack *stack_a, struct stack *stack_b)
 	int temp;
 
 	num_rot = 0;
-	while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top])// || stack_a->numbers[stack_a->top] > stack_b->numbers[0])
+	while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top]
+		|| stack_a->numbers[stack_a->top] > stack_b->numbers[0])
 	{
 		rotate(stack_b);
 		temp = num_rot++;
