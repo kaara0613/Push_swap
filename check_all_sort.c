@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_all_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 15:50:08 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 18:25:57 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ bool	check_pivot(int pivot, struct stack *stack_a)
 	i = 0;
 	while (i <= stack_a->top)
 	{
-		if (stack_a->numbers[i] >= pivot)
+		if (stack_a->numbers[i] < pivot)
 			return (true);
 		i++;
 	}

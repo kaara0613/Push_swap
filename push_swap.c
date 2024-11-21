@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 23:53:36 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 18:25:58 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 void	partition_pivot(int pivot, struct stack *stack_a, struct stack *stack_b)
 {
 	static int i = 0;
-	if (i++ >= 30)
+	if (i++ >= 50)
 		return;
 	if (!check_pivot(pivot, stack_a))
 		return ;
 	if (stack_a->numbers[stack_a->top] < pivot)
 		insertion_sort_b(stack_a, stack_b);
-	if (!(stack_a->numbers[stack_a->top - 1] > stack_a->numbers[stack_a->top])
+	if (!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top])
 		&& !(stack_a->numbers[stack_a->top] < pivot))
 		sa(stack_a);
 	else if(!(stack_a->numbers[stack_a->top] < pivot))

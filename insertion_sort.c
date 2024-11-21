@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:18:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/21 13:57:35 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/21 18:31:17 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void max_min_value(struct stack *stack_a, struct stack *stack_b)
 		stack_b->min_value = stack_a->numbers[stack_a->top];
 	if (stack_b->top / 2 > stack_b->flag)
 	{
-		while (stack_b->flag-- >= 0)
+		while (stack_b->flag-- > 0)
 			rrb(stack_b);
 	}
 	else
@@ -148,23 +148,26 @@ static void	check_num_rot_b(struct stack *stack_a, struct stack *stack_b)
 	int temp;
 
 	num_rot = 0;
-	while (stack_b->numbers[stack_b->top] < stack_a->numbers[stack_a->top])//&& stack_a->numbers[stack_a->top] > stack_a->numbers[0])
+	while (stack_a->numbers[stack_a->top] < stack_b->numbers[stack_b->top])// || stack_a->numbers[stack_a->top] > stack_b->numbers[0])
 	{
-		rotate(stack_a);
+		rotate(stack_b);
 		temp = num_rot++;
 	}
 	while (temp-- >= 0)
 		rev_rotate(stack_a);
 	if (num_rot > stack_a->top / 2)
 		num_rot = 0 - (stack_a->top - num_rot);
+	printf("%d\n", num_rot);
 	if (num_rot < 0)
 	{
 		while (num_rot++ < 0)
-			rb(stack_b);
+			rrb(stack_b);
 	}
 	else
 	{
-		while (--num_rot > 0)
-			rrb(stack_b);
+		while (num_rot-- > 0)
+			rb(stack_b);
+		// if (stack_a->top / 2)
+		// 	rb(stack_b);
 	}
 }
