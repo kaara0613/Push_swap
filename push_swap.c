@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/21 22:21:54 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 12:36:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// static void	check_swap(struct stack *stack_a, struct stack *stack_b);
 
 void	partition_pivot(int pivot, struct stack *stack_a, struct stack *stack_b)
 {
@@ -27,45 +25,3 @@ void	partition_pivot(int pivot, struct stack *stack_a, struct stack *stack_b)
 		ra(stack_a);
 	partition_pivot(pivot, stack_a, stack_b);
 }
-
-// void	check_rotate(struct stack *stack_a, struct stack *stack_b)
-// {
-// 	bool	a;
-// 	bool	b;
-
-// 	if ((stack_a->numbers[stack_a->top] >= stack_b->min_value))
-// 		return ;
-// 	if (stack_a->numbers[stack_a->top] == stack_a->min_value
-// 		&& stack_b->numbers[stack_b->top] == stack_b->max_value)
-// 		return ;
-// 	a = check_sort_a(stack_a, stack_b);
-// 	b = check_sort_b(stack_b);
-// 	if ((!a) && (!b))
-// 		rr(stack_a, stack_b);
-// 	else if (!a)
-// 		ra(stack_a);
-// 	else if (!b)
-// 		rb(stack_b);
-// }
-
-// void	check_swap(struct stack *stack_a, struct stack *stack_b)
-// {
-// 	int a;
-// 	int b;
-// 	a = check_sort_a(stack_a, stack_b);//revするかしないか選択制に変更
-// 	b = check_sort_b(stack_b);
-// 	if ((!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top]) && !a)
-// 		&& (!(stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top]) && !b))
-// 		ss(stack_a, stack_b);
-// 	else if (!(stack_a->numbers[stack_a->top - 1] < stack_a->numbers[stack_a->top]) && !a)
-// 		sa(stack_a);
-// 	else if (!(stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top]) && !b)
-// 		sb(stack_b);
-// }
-
-// void sorted(struct stack *stack_a, struct stack *stack_b)
-// {
-// 	if(stack_a->flag == 0)
-// }
-
-//https://push-swap-visualizer.vercel.app/

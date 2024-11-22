@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_pivot.c                                       :+:      :+:    :+:   */
+/*   pivot_make.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 10:31:11 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 17:04:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pivot_make(struct stack *stack_a, struct stack *stack_b)
+int	pivot_make(struct stack *stack_a, struct stack *stack_b, int *nums)
 {
 	int	pivot;
 
-	pivot = 26;
-	stack_a->min_value = 26;
-	stack_a->max_value = 50;
+	nums_allocation(stack_a, nums);
+	pivot = pivot_remake(stack_a, nums);
+	return (0);
+	stack_a->min_value = pivot;
+	stack_a->max_value = nums[stack_a->top];
 	stack_b->min_value = 2147483647;
 	stack_b->max_value = -2147483648;
 	stack_flag_make(stack_a->min_value, stack_a);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 09:35:44 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 16:59:52 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <string.h>
+
 
 struct stack {
 	int *numbers;
@@ -43,9 +45,13 @@ bool	check_sort_per_a(struct stack *stack_a);
 bool	check_sort_per_b(struct stack *stack_b);
 bool	check_pivot(int pivot, struct stack *stack_a);
 
-// make_pivot.c
-int		pivot_make(struct stack	*stack_a, struct stack	*stack_b);
+// pivot_make.c
+int		pivot_make(struct stack	*stack_a, struct stack	*stack_b, int *num);
 void	stack_flag_make(int min_value, struct stack	*stack_temp);
+
+// pivot_make_u.c
+int	pivot_remake(struct stack *temp, int *nums_a);
+bool	nums_allocation(struct stack *stack_a, int *nums_a);
 
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
