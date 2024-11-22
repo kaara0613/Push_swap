@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pivot_make.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 18:09:30 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 21:12:30 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	pivot_make(struct stack *stack_a, struct stack *stack_b, int *nums)
 	int	pivot;
 
 	nums_allocation(stack_a, nums);
-	pivot = pivot_remake(stack_a, nums);
+	pivot = 2147483647;
 	stack_a->min_value = pivot;
 	stack_a->max_value = nums[stack_a->top];
 	stack_b->min_value = 2147483647;

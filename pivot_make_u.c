@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pivot_make_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 17:08:55 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 21:10:57 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@ static void	heapsort(int *nums, int n);
 static void	swap(int *a, int *b);
 static void	heapify(int *arr, int n, int i);
 
-int	pivot_remake(struct stack *temp, int *nums)
+int	pivot_remake(int pivot, struct stack *stack, int *nums)
 {
-	int	pivot;
+	int	temp_top; 
+	int i;
 
-	memcpy(nums, temp->numbers, sizeof(int) * (temp->top + 1));
-	return (0);
-	heapsort(nums, temp->top);
-	if (!(temp->top / 2))
-		pivot = (nums[temp->top / 2] + nums[temp->top / 2 + 1]) / 2;
+	i = count_pivot_u(pivot, stack);
+	temp_top = stack->top;
+	stack->flag = pivot;
+	while(stack->numbers[stack->top] < pivot)
+		nums[i--] = stack->numbers[temp_top--];
+	heapsort(nums, stack->top);
+	if (!(stack->top / 2))
+		pivot = (nums[stack->top / 2] + nums[stack->top / 2 + 1]) / 2;
 	else
-		pivot = nums[temp->top / 2 + 1];
+		pivot = nums[stack->top / 2 + 1];
 	return (pivot);
 }
 
