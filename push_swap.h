@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 16:59:52 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 19:36:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ struct stack {
 };
 
 //push_swap.c
-void	partition_pivot(int pivot, struct stack *stack_a, struct stack *stack_b);
+void	part_u_pivot(int pivot, struct stack *stack_a, struct stack *stack_b);
 void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 
 //insertion_sort.c
@@ -50,7 +50,7 @@ int		pivot_make(struct stack	*stack_a, struct stack	*stack_b, int *num);
 void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 // pivot_make_u.c
-int	pivot_remake(struct stack *temp, int *nums_a);
+int	pivot_remake(struct stack *temp, int *nums);
 bool	nums_allocation(struct stack *stack_a, int *nums_a);
 
 //stack_make.c
