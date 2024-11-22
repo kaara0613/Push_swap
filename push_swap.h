@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 15:39:26 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/22 09:35:44 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void insertion_sort(int pivot, struct stack *stack_a, struct stack *stack_b);
 void insertion_sort_b(struct stack *stack_a, struct stack *stack_b);
 
 //check_all_sort.c
-bool	check_sort_a(int pivot, struct stack *stack_a);
+bool	check_sort_a(struct stack *stack_a);
 bool	check_sort_b(struct stack	*stack_b);
-bool	check_sort_per_a(int pivot, struct stack *stack_a);
+bool	check_sort_per_a(struct stack *stack_a);
 bool	check_sort_per_b(struct stack *stack_b);
 bool	check_pivot(int pivot, struct stack *stack_a);
 
