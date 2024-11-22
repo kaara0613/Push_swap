@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 21:10:57 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 00:04:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static void	heapsort(int *nums, int n);
 static void	swap(int *a, int *b);
 static void	heapify(int *arr, int n, int i);
 
-int	pivot_remake(int pivot, struct stack *stack, int *nums)
+int	pivot_remake(int pivot, int *nums, struct stack *stack)
 {
-	int	temp_top; 
+	int	temp_top;
 	int i;
 
 	i = count_pivot_u(pivot, stack);
