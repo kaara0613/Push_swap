@@ -1,35 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pivot_make_u.c                                     :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 13:30:40 by kaara            ###   ########.fr       */
+/*   Created: 2024/11/23 12:01:40 by kaara             #+#    #+#             */
+/*   Updated: 2024/11/23 12:30:11 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-static void	heap_sort(int *nums, int n);
-static void	swap(int *a, int *b);
-static void	heapify(int *arr, int n, int i);
-
-int	pivot_remake(int pivot, int *nums, struct stack *stack)
-{
-	int	temp_top;
-	int i;
-
-	i = count_flag_u(stack) - 1;
-	temp_top = stack->top;
-	while (i >= 0)
-		nums[i--] = stack->numbers[temp_top--];
-	heap_sort(nums, stack->top);
-	pivot = nums[stack->top / 2 + 1];
-	stack->flag = pivot;
-	return (pivot);
-}
+#include <stdio.h>
 
 static void	swap(int *a, int *b)
 {
@@ -77,6 +58,34 @@ static void	heap_sort(int *nums, int n)
 	{
 		swap(&nums[0], &nums[i]);
 		heapify(nums, i, 0);
-		i--;
+        i--;
 	}
+}
+
+int main()
+{
+    int nums[] = {4, 10, 3, 5, 1, 7 ,11 ,6 ,9};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int j = 0;
+
+    printf("元の配列: ");
+    while (j < n)
+    {
+        printf("%d ", nums[j]);
+        j++;
+    }
+    printf("\n");
+
+    heap_sort(nums, n);
+
+    printf("ソート後の配列: ");
+    j = 0;
+    while (j < n)
+    {
+        printf("%d ", nums[j]);
+        j++;
+    }
+    printf("\n");
+
+    return 0;
 }

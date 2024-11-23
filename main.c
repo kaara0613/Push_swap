@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 09:35:44 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 11:48:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 	nums = NULL;
 	stack_a = make_stack_a(argc, argv);
 	stack_b = make_stack_b(stack_a);
+	nums = nums_allocation(nums, stack_a);
 	pivot = pivot_make(nums, stack_a, stack_b);
 	part_pivot_ua(pivot, nums, stack_a, stack_b);
 	free_stack(stack_a, stack_b);

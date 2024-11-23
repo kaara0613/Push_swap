@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_make.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 09:13:27 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 11:46:53 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,16 @@ struct stack	*make_stack_b(struct stack *stack_a)
 	stack_b->top = -1;
 	return (stack_b);
 }
-bool	nums_allocation(int *nums, struct stack *stack_a)
+
+int	*nums_allocation(int *nums, struct stack *stack_a)
 {
 	nums = (int *)malloc(sizeof(int) * stack_a->size);
 	if (!nums)
 	{
 		printf("failed allocation of nums_a.");
-		return (false);
+		return (NULL);
 	}
-	return (true);
+	return (nums);
 }
 
 bool	free_stack(struct stack *stack_a, struct stack *stack_b)
