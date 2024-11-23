@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 12:41:03 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 14:38:15 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	part_pivot_ua(int pivot, int *nums, struct stack *stack_a, struct stack *st
 void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 
 //push_swap_u.c
-int count_flag_u(struct stack *stack);
+int count_pivot_u(int pivot, struct stack *stack);
 
 //insertion_sort.c
 // void insertion_sort(int pivot, struct stack *stack_a, struct stack *stack_b);
