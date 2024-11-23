@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 10:43:52 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 11:03:04 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	pivot_remake(int pivot, int *nums, struct stack *stack)
 	i = count_flag_u(stack) - 1;
 	temp_top = stack->top;
 	stack->flag = pivot;
+	printf("%d\n%d", i, temp_top);
+	return 0;
 	while(i >= 0)//segufo
 		nums[i--] = stack->numbers[temp_top--];
 	heap_sort(nums, stack->top);
