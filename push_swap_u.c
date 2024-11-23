@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 09:35:44 by kaara            ###   ########.fr       */
+/*   Created: 2024/11/23 08:53:21 by kaara             #+#    #+#             */
+/*   Updated: 2024/11/23 10:18:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int count_flag_u(struct stack *stack) //flag以下の要素数を返す;
 {
-	struct stack	*stack_a;
-	struct stack	*stack_b;
-	int				*nums;
-	int				pivot;
+	int i;
+    int temp;
 
-	if (argc <= 2)
-		return (0);
-	nums = NULL;
-	stack_a = make_stack_a(argc, argv);
-	stack_b = make_stack_b(stack_a);
-	pivot = pivot_make(nums, stack_a, stack_b);
-	part_pivot_ua(pivot, nums, stack_a, stack_b);
-	free_stack(stack_a, stack_b);
-	free(nums);
-	return (0);
+    i = 0;
+    temp = stack->top;
+    while (temp-- >= 0 && stack->numbers[temp] < stack->flag)
+        i++;
+    return (i);
 }
+

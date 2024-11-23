@@ -6,47 +6,43 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/22 21:12:30 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 10:44:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pivot_make(struct stack *stack_a, struct stack *stack_b, int *nums)
+int	pivot_make(int *nums, struct stack *stack_a, struct stack *stack_b)
 {
 	int	pivot;
 
-	nums_allocation(stack_a, nums);
+	nums_allocation(nums, stack_a);
 	pivot = 2147483647;
-	stack_a->min_value = pivot;
-	stack_a->max_value = nums[stack_a->top];
-	stack_b->min_value = 2147483647;
-	stack_b->max_value = -2147483648;
-	stack_flag_make(stack_a->min_value, stack_a);
-	stack_flag_make(stack_b->min_value, stack_b);
+	stack_a->flag = pivot;
+	stack_b->flag = pivot;
 	return (pivot);
 }
 
-void	stack_flag_make(int value, struct stack *stack_temp)
-{
-	int	i;
+// void	stack_flag_make(int value, struct stack *stack_temp)
+// {
+// 	int	i;
 
-	i = 0;
-	if (stack_temp->top < 0)
-	{
-		stack_temp->flag = -1;
-		return ;
-	}
-	else
-	{
-		while (i <= stack_temp->top)
-		{
-			if (stack_temp->numbers[i] == value)
-			{
-				stack_temp->flag = i;
-				return ;
-			}
-			i++;
-		}
-	}
-}
+// 	i = 0;
+// 	if (stack_temp->top < 0)
+// 	{
+// 		stack_temp->flag = -1;
+// 		return ;
+// 	}
+// 	else
+// 	{
+// 		while (i <= stack_temp->top)
+// 		{
+// 			if (stack_temp->numbers[i] == value)
+// 			{
+// 				stack_temp->flag = i;
+// 				return ;
+// 			}
+// 			i++;
+// 		}
+// 	}
+// }

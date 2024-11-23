@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:20:01 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:37:43 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 09:06:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rr(struct stack *stack_a, struct stack *stack_b)
-{
-	rotate(stack_a);
-	rotate(stack_b);
-	printf("rr\n");
-}
+// void	rr(struct stack *stack_a, struct stack *stack_b)
+// {
+// 	rotate(stack_a);
+// 	rotate(stack_b);
+// 	printf("rr\n");
+// }
 
 void	ra(struct stack *stack_a)
 {

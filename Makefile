@@ -3,16 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
+#    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/11/22 16:58:22 by kaara            ###   ########.fr        #
+#    Updated: 2024/11/23 09:33:48 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Push_swap.a
 
-SRCS = main.c push_swap.c stack_make.c stack_use.c push.c rotate.c swap.c pivot_make.c check_all_sort.c rev_rotate.c insertion_sort.c pivot_make_u.c
+SRCS = main.c \
+		push_swap.c push_swap_u.c \
+		stack_make.c stack_use.c \
+		push.c rotate.c swap.c  \
+		pivot_make.c  pivot_make_u.c \
+		check_sort.c
 
 OBJS = ${SRCS:.c=.o}
 

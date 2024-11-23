@@ -6,13 +6,13 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 00:04:06 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 10:43:52 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	heapsort(int *nums, int n);
+static void	heap_sort(int *nums, int n);
 static void	swap(int *a, int *b);
 static void	heapify(int *arr, int n, int i);
 
@@ -21,12 +21,12 @@ int	pivot_remake(int pivot, int *nums, struct stack *stack)
 	int	temp_top;
 	int i;
 
-	i = count_pivot_u(pivot, stack);
+	i = count_flag_u(stack) - 1;
 	temp_top = stack->top;
 	stack->flag = pivot;
-	while(stack->numbers[stack->top] < pivot)
+	while(i >= 0)//segufo
 		nums[i--] = stack->numbers[temp_top--];
-	heapsort(nums, stack->top);
+	heap_sort(nums, stack->top);
 	if (!(stack->top / 2))
 		pivot = (nums[stack->top / 2] + nums[stack->top / 2 + 1]) / 2;
 	else
@@ -34,18 +34,7 @@ int	pivot_remake(int pivot, int *nums, struct stack *stack)
 	return (pivot);
 }
 
-bool	nums_allocation(struct stack *stack_a, int *nums)
-{
-	nums = (int *)malloc(sizeof(int) * stack_a->size);
-	if (!nums)
-	{
-		printf("failed allocation of nums_a.");
-		return (false);
-	}
-	return (true);
-}
-
-static void	heapsort(int *nums, int n)
+static void	heap_sort(int *nums, int n)
 {
 	int	left_i;
 	int	right_i;
