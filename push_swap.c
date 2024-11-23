@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 14:37:52 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 15:55:43 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	part_pivot_ua(int pivot, int *nums, struct stack *stack_a, struct stack *st
 			ra(stack_a);
 	}
 	part_pivot_ub(pivot, nums, stack_a, stack_b);
-	part_pivot_ua(pivot, nums, stack_a, stack_b);
 }
 
 void	part_pivot_ub(int pivot, int *nums, struct stack *stack_a, struct stack *stack_b)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pivot_make_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 14:53:13 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/23 15:56:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	pivot_remake(int pivot, int *nums, struct stack *stack)
 	while (i >= 0)
 		nums[i--] = stack->numbers[temp_top--];
 	heap_sort(nums, stack->top);
-	pivot = nums[stack->top / 2];
+	if (stack->top % 2)
+		pivot = nums[stack->top / 2];
+	else
+		pivot = nums[stack->top / 2 - 1];
 	stack->flag = pivot;
 	return (pivot);
 }
