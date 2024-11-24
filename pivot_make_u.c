@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pivot_make_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/24 14:12:36 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/24 15:03:45 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	pivot_remake(int pivot, int *nums, struct stack *stack)
 	temp_top = stack->top;
 	while (i >= 0)
 		nums[i--] = stack->numbers[temp_top--];
-	heap_sort(nums, stack->top);
+	heap_sort(nums, stack->top + 1);
 	if (stack->top % 2)
-		pivot = nums[stack->top / 2];
+		pivot = nums[stack->top / 2 + 1];
 	else
-		pivot = nums[stack->top / 2 - 1];
+		pivot = nums[stack->top / 2];
 	stack->flag = pivot;
 	return (pivot);
 }
@@ -45,22 +45,22 @@ static void	swap(int *a, int *b)
 
 static	void	heapify(int *nums, int n, int i)
 {
-	int	smallest;
+	int	largest;
 	int	left;
 	int	right;
 
-	smallest = i;
+	largest = i;
 	left = 2 * i + 1;
 	right = 2 * i + 2;
 
-	if (left < n && nums[left] > nums[smallest])
-		smallest = left;
-if (right < n && nums[right] > nums[smallest])
-		smallest = right;
-	if (smallest != i)
+	if (left < n && nums[left] > nums[largest])
+		largest = left;
+	if (right < n && nums[right] > nums[largest])
+		largest = right;
+	if (largest != i)
 	{
-		swap(&nums[i], &nums[smallest]);
-		heapify(nums, n, smallest);
+		swap(&nums[i], &nums[largest]);
+		heapify(nums, n, largest);
 	}
 }
 

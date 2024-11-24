@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unit_test00.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:55:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/24 14:14:09 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/24 14:51:38 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int	main(int argc, char **argv)
 	nums = nums_allocation(nums, stack_a);
 	pivot = pivot_make(nums, stack_a, stack_b);
 	pivot = pivot_remake(pivot, nums, stack_a);
-	printf("%d", pivot);
+	for(int i = 0; i <= stack_a->top; i++)
+        printf("%d ", nums[i]);
+	printf("\n%d", pivot);
 	// part_pivot_ua(pivot, nums, stack_a, stack_b);
 	free_stack(stack_a, stack_b);
 	free(nums);
