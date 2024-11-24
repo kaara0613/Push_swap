@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 15:56:01 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/24 14:12:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,22 +45,22 @@ static void	swap(int *a, int *b)
 
 static	void	heapify(int *nums, int n, int i)
 {
-	int	largest;
+	int	smallest;
 	int	left;
 	int	right;
 
-	largest = i;
+	smallest = i;
 	left = 2 * i + 1;
 	right = 2 * i + 2;
 
-	if (left < n && nums[left] > nums[largest])
-		largest = left;
-	if (right < n && nums[right] > nums[largest])
-		largest = right;
-	if (largest != i)
+	if (left < n && nums[left] > nums[smallest])
+		smallest = left;
+if (right < n && nums[right] > nums[smallest])
+		smallest = right;
+	if (smallest != i)
 	{
-		swap(&nums[i], &nums[largest]);
-		heapify(nums, n, largest);
+		swap(&nums[i], &nums[smallest]);
+		heapify(nums, n, smallest);
 	}
 }
 
