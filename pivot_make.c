@@ -6,22 +6,18 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 10:44:06 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/25 00:01:44 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pivot_make(int *nums, struct stack *stack_a, struct stack *stack_b)
-{
-	int	pivot;
+// void	pivot_make(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b)
+// {
 
-	nums_allocation(nums, stack_a);
-	pivot = 2147483647;
-	stack_a->flag = pivot;
-	stack_b->flag = pivot;
-	return (pivot);
-}
+// 	stack_a->flag = pivot;
+// 	stack_b->flag = pivot;
+// }
 
 // void	stack_flag_make(int value, struct stack *stack_temp)
 // {

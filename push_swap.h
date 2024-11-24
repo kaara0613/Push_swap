@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 14:38:15 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/24 22:41:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ struct stack {
 };
 
 //push_swap.c
-void	part_pivot_ua(int pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
+void	part_pivot_ua(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
 void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 
 //push_swap_u.c
