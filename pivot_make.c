@@ -6,12 +6,47 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/25 11:04:09 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/26 00:02:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	pivot_remake(int *pivot, int *nums, struct stack *stack)
+{
+	int	temp_top;
+	int i;
+
+	i = count_pivot_u(stack->flag, stack) - 1;//flagをpivotに変更
+	temp_top = stack->top;
+	while (i >= 0)
+		nums[i--] = stack->numbers[temp_top--];
+	heap_sort(nums, stack->top + 1);
+	if (stack->top % 2)
+		*pivot = nums[stack->top / 2 + 1];
+	else
+		*pivot = nums[stack->top / 2];
+	stack->flag = *pivot;
+	return (*pivot);
+}
+
+int	return_pivot_remake(int *pivot, int *nums, struct stack *stack, struct stack *flag)
+{
+	int	temp_top;
+	int i;
+
+	flag->flag = *pivot;
+	i = count_pivot(stack->flag, stack);//flagをpivotに変更
+	temp_top = stack->top;
+	while (i >= 0)
+		nums[i--] = stack->numbers[temp_top--];
+	heap_sort(nums, stack->top + 1);
+	if (stack->top % 2)
+		*pivot = nums[stack->top / 2 + 1];
+	else
+		*pivot = nums[stack->top / 2];
+	return (*pivot);
+}
 // void	pivot_make(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b)
 // {
 

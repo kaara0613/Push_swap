@@ -23,6 +23,7 @@ OBJS = ${SRCS:.c=.o}
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 AR = ar rcs
 RM = rm -f
@@ -49,5 +50,6 @@ test:all
 	
 
 re: fclean all
+
 
 .PHONY: all clean fclean re test

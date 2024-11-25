@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/25 10:22:11 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/25 23:57:17 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ struct stack {
 };
 
 //push_swap.c
-void	part_pivot_ua(int pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
+void	part_pivot_ua(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
 void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 
 //push_swap_u.c
 int count_pivot_u(int pivot, struct stack *stack);
+int count_pivot(int pivot, struct stack *stack);
 
 //insertion_sort.c
 // void insertion_sort(int pivot, struct stack *stack_a, struct stack *stack_b);
@@ -47,17 +48,20 @@ bool	check_sort(struct stack *stack_a);
 bool	check_pivot(int pivot, struct stack *stack_a);
 
 // pivot_make.c
-int		pivot_make(int *num, struct stack	*stack_a, struct stack	*stack_b);
+int	pivot_remake(int *pivot, int *nums, struct stack *stack);
+int	return_pivot_remake(int *pivot, int *nums, struct stack *stack, struct stack *flag);
 void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 // pivot_make_u.c
-int	pivot_remake(int pivot, int *nums, struct stack *stack);
-int	*nums_allocation(int *nums, struct stack *stack_a);
+void	heap_sort(int *nums, int n);
+
 
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
 struct stack	*make_stack_b(struct stack	*stack_a);
-bool	free_stack(struct stack *stack_a, struct stack *stack_b);
+int	*nums_allocation(int *nums, struct stack *stack_a);
+void	free_stack(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
+int *pivot_allocation(int *pivot);
 
 //stack_use.c
 bool is_empty(struct stack *stack_temp);
