@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/24 15:03:45 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/25 11:02:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	pivot_remake(int pivot, int *nums, struct stack *stack)
 	int	temp_top;
 	int i;
 
-	i = count_pivot_u(stack->flag, stack) - 1;
+	i = count_pivot_u(stack->flag, stack) - 1;//flagをpivotに変更
 	temp_top = stack->top;
 	while (i >= 0)
 		nums[i--] = stack->numbers[temp_top--];
