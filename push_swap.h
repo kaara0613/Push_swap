@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/25 23:57:17 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/26 14:48:03 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ bool	check_sort(struct stack *stack_a);
 bool	check_pivot(int pivot, struct stack *stack_a);
 
 // pivot_make.c
-int	pivot_remake(int *pivot, int *nums, struct stack *stack);
-int	return_pivot_remake(int *pivot, int *nums, struct stack *stack, struct stack *flag);
+void	pivot_remake(int *pivot, int *nums, struct stack *stack);
+void	return_pivot_remake(int *pivot, int *nums, struct stack *stack);
 void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 // pivot_make_u.c
@@ -60,8 +60,8 @@ void	heap_sort(int *nums, int n);
 struct stack	*make_stack_a(int	argc, char	**argv);
 struct stack	*make_stack_b(struct stack	*stack_a);
 int	*nums_allocation(int *nums, struct stack *stack_a);
-void	free_stack(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
-int *pivot_allocation(int *pivot);
+void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b);
+int pivot_reset_int_max(void);
 
 //stack_use.c
 bool is_empty(struct stack *stack_temp);
