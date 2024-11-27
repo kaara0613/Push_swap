@@ -1,9 +1,8 @@
-10
+a
 ra
 pb
 pb
 pb
-ra
 pb
 ra
 ra
@@ -11,9 +10,13 @@ pb
 b
 rb
 pa
+rb
 pa
+a
 ra
 ra
-b
-sa
-b
+return b
+0
+a
+return a
+a

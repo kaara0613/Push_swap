@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/26 15:27:42 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/26 16:41:59 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void part_pivot_ub(int *pivot, int *nums, struct stack *stack_a, struct s
 
 void	part_pivot_ua(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b)
 {
-	// printf("a\n");
+	printf("a\n");
 	// printf("%d\n",count_pivot_u(stack_a->flag, stack_a));
 	if (count_pivot_u(stack_a->flag, stack_a) <= 2)
 	{
@@ -29,11 +29,13 @@ void	part_pivot_ua(int *pivot, int *nums, struct stack *stack_a, struct stack *s
 			ra(stack_a);
 		return ;
 	}
-	printf("%d\n",count_pivot_u(stack_a->flag, stack_a));
 	pivot_remake(pivot, nums, stack_a);
 	partition_pivot_a(pivot, stack_a, stack_b);
 	part_pivot_ub(pivot, nums, stack_a, stack_b);
-	//2つ前まで保持すれば挟めるようになる
+	//returnしたタイミングのpivotをつくって仕分けまでする
+	printf("return a\n");
+	return_pivot_remake(pivot, nums, stack_a, stack_b);
+	partition_pivot_a(pivot, stack_a, stack_b);
 	part_pivot_ua(pivot, nums, stack_a, stack_b);
 }
 
@@ -51,7 +53,11 @@ void	part_pivot_ub(int *pivot, int *nums, struct stack *stack_a, struct stack *s
 	pivot_remake(pivot, nums, stack_b);
 	partition_pivot_b(pivot, stack_a, stack_b);
 	part_pivot_ua(pivot, nums, stack_a, stack_b);
-	part_pivot_ub(pivot, nums, stack_a, stack_b);
+	printf("return b\n");
+	return_pivot_remake(pivot, nums, stack_b, stack_a);
+	printf("%d\n", *pivot);
+	partition_pivot_b(pivot, stack_a, stack_b);
+	part_pivot_ua(pivot, nums, stack_a, stack_b);
 }
 
 void partition_pivot_a(int *pivot, struct stack *stack_a, struct stack *stack_b)

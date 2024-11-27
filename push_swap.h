@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/26 14:48:03 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/26 16:19:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ bool	check_pivot(int pivot, struct stack *stack_a);
 
 // pivot_make.c
 void	pivot_remake(int *pivot, int *nums, struct stack *stack);
-void	return_pivot_remake(int *pivot, int *nums, struct stack *stack);
+void	return_pivot_remake(int *pivot, int *nums, struct stack *current_stack, struct stack *return_stack);
 void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 // pivot_make_u.c
