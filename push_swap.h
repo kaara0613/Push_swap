@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/25 23:57:17 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:26:56 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ struct stack {
 	int top;
 	int size;
 	int flag;//前々回のpivot
+	int min;
 };
 
 //push_swap.c
@@ -48,8 +49,8 @@ bool	check_sort(struct stack *stack_a);
 bool	check_pivot(int pivot, struct stack *stack_a);
 
 // pivot_make.c
-int	pivot_remake(int *pivot, int *nums, struct stack *stack);
-int	return_pivot_remake(int *pivot, int *nums, struct stack *stack, struct stack *flag);
+void	pivot_remake(int *pivot, int *nums, struct stack *stack);
+void	return_pivot_remake(int *pivot, int *nums, struct stack *current_stack, struct stack *return_stack);
 void	stack_flag_make(int min_value, struct stack	*stack_temp);
 
 // pivot_make_u.c
@@ -60,8 +61,8 @@ void	heap_sort(int *nums, int n);
 struct stack	*make_stack_a(int	argc, char	**argv);
 struct stack	*make_stack_b(struct stack	*stack_a);
 int	*nums_allocation(int *nums, struct stack *stack_a);
-void	free_stack(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
-int *pivot_allocation(int *pivot);
+void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b);
+void pivot_reset_int_max(int *pivot, struct stack *stack_a, struct stack *stack_b);
 
 //stack_use.c
 bool is_empty(struct stack *stack_temp);
@@ -80,10 +81,10 @@ void rb(struct stack *stack_b);
 void    rotate(struct stack *stack_temp);
 
 //rev_rotate.c
-// void rra(struct stack *stack_a);
-// void rrb(struct stack *stack_b);
+void rra(struct stack *stack_a);
+void rrb(struct stack *stack_b);
 // void rrr(struct stack *stack_a, struct stack *stack_b);
-// void    rev_rotate(struct stack *stack_temp);
+void    rev_rotate(struct stack *stack_temp);
 
 //swap.c
 void sa(struct stack *stack_a);
@@ -91,4 +92,5 @@ void sb(struct stack *stack_b);
 // void ss(struct stack *stack_a, struct stack *stack_b);
 
 // static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
+void	return_pivot_remake(int *pivot, int *nums, struct stack *stack);
 #endif

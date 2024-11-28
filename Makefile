@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/11/23 09:33:48 by kaara            ###   ########.fr        #
+#    Updated: 2024/11/28 12:55:14 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Push_swap.a
 SRCS = main.c \
 		push_swap.c push_swap_u.c \
 		stack_make.c stack_use.c \
-		push.c rotate.c swap.c  \
+		push.c rotate.c rev_rotate.c swap.c  \
 		pivot_make.c  pivot_make_u.c \
 		check_sort.c
 

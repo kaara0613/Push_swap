@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/25 23:57:45 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 11:07:02 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ struct stack	*make_stack_a(int argc, char **argv)
 		return (NULL);
 	stack_a->size = argc - 1;
 	stack_a->top = -1;
+	stack_a->flag = 2147483647;
+	stack_a->min = -2147483648;
 	stack_a->numbers = (int *)malloc(sizeof(int) * stack_a->size);
 	if (!stack_a->numbers)
 		return (free(stack_a), NULL);
@@ -43,6 +45,7 @@ struct stack	*make_stack_b(struct stack *stack_a)
 	if (!stack_b->numbers)
 		return (free(stack_a), NULL);
 	stack_b->top = -1;
+	stack_b->min = -2147483648;
 	return (stack_b);
 }
 
@@ -57,21 +60,21 @@ int	*nums_allocation(int *nums, struct stack *stack_a)
 	return (nums);
 }
 
-int *pivot_allocation(int *pivot)
+void	pivot_reset_int_max(int *pivot, struct stack *stack_a, struct stack *stack_b)
 {
-	pivot = (int *)malloc(sizeof(int) * 1);
-	if (!pivot)
-		return (NULL);
-	*pivot = 2147483647;
-	return (pivot);
+	int temp;
+
+	temp = 2147483647;
+	pivot = &temp;
+	stack_a->flag = *pivot;
+	stack_b->flag = *pivot;
 }
 
-void	free_stack(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b)
+void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b)
 {
 	free(stack_a->numbers);
 	free(stack_a);
 	free(stack_b->numbers);
 	free(stack_b);
-	free(pivot);
 	free(nums);
 }
