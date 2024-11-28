@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/28 10:35:24 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:26:56 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ struct stack {
 	int top;
 	int size;
 	int flag;//前々回のpivot
+	int min;
 };
 
 //push_swap.c
@@ -80,10 +81,10 @@ void rb(struct stack *stack_b);
 void    rotate(struct stack *stack_temp);
 
 //rev_rotate.c
-// void rra(struct stack *stack_a);
-// void rrb(struct stack *stack_b);
+void rra(struct stack *stack_a);
+void rrb(struct stack *stack_b);
 // void rrr(struct stack *stack_a, struct stack *stack_b);
-// void    rev_rotate(struct stack *stack_temp);
+void    rev_rotate(struct stack *stack_temp);
 
 //swap.c
 void sa(struct stack *stack_a);
@@ -91,4 +92,5 @@ void sb(struct stack *stack_b);
 // void ss(struct stack *stack_a, struct stack *stack_b);
 
 // static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
+void	return_pivot_remake(int *pivot, int *nums, struct stack *stack);
 #endif
