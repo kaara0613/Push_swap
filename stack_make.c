@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/26 11:48:33 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 10:35:40 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ struct stack	*make_stack_b(struct stack *stack_a)
 	if (!stack_b)
 		return (NULL);
 	stack_b->size = stack_a->size;
-	stack_b->flag = 2147483647;
 	stack_b->numbers = (int *)malloc(sizeof(int) * stack_b->size);
 	if (!stack_b->numbers)
 		return (free(stack_a), NULL);
@@ -59,11 +58,14 @@ int	*nums_allocation(int *nums, struct stack *stack_a)
 	return (nums);
 }
 
-int	pivot_reset_int_max(void)
+void	pivot_reset_int_max(int *pivot, struct stack *stack_a, struct stack *stack_b)
 {
-	int pivot;
-	pivot = 2147483647;
-	return (pivot);
+	int temp;
+
+	temp = 2147483647;
+	pivot = &temp;
+	stack_a->flag = *pivot;
+	stack_b->flag = *pivot;
 }
 
 void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b)

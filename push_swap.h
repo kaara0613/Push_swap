@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/26 16:19:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 10:35:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ struct stack	*make_stack_a(int	argc, char	**argv);
 struct stack	*make_stack_b(struct stack	*stack_a);
 int	*nums_allocation(int *nums, struct stack *stack_a);
 void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b);
-int pivot_reset_int_max(void);
+void pivot_reset_int_max(int *pivot, struct stack *stack_a, struct stack *stack_b);
 
 //stack_use.c
 bool is_empty(struct stack *stack_temp);

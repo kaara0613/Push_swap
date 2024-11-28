@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/26 11:46:19 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 10:34:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	temp = 2147483647;
 	pivot = &temp;
 	nums = nums_allocation(nums, stack_a);
+	pivot_reset_int_max(pivot, stack_a, stack_b);
 	part_pivot_ua(pivot, nums, stack_a, stack_b);
 	free_stack(nums, stack_a, stack_b);
 	return (0);
