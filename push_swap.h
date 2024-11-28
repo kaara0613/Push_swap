@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/28 15:26:56 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:48:50 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,4 @@ void sb(struct stack *stack_b);
 // void ss(struct stack *stack_a, struct stack *stack_b);
 
 // static void	sorted_rev(struct stack *stack_a, struct stack *stack_b);
-void	return_pivot_remake(int *pivot, int *nums, struct stack *stack);
 #endif

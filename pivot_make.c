@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/28 15:27:34 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:49:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,41 +39,41 @@ void	pivot_remake(int *pivot, int *nums, struct stack *stack)
 	printf("after:%d\n", *pivot);
 }
 
-void	return_pivot_remake(int *pivot, int *nums, struct stack *current_stack, struct stack *return_stack)
-{
-	int	temp_top;
-	int max;
-	int count;
+// void	return_pivot_remake(int *pivot, int *nums, struct stack *current_stack, struct stack *return_stack)
+// {
+// 	int	temp_top;
+// 	int max;
+// 	int count;
 
-	if (current_stack->top <= 1)
-	{
-		*pivot = current_stack->numbers[current_stack->top] + 1;
-		return ;
-	}
-	count = -1;
-	// for(int t = 0; t <= current_stack->top; t++)
-	// 	printf("%d,", current_stack->numbers[t]);
-	// printf("\n");
-	temp_top = current_stack->top;
-	if (return_stack->top == -1)
-		max = 2147483647;
-	else
-		max = return_stack->numbers[return_stack->top];
-	while (temp_top >= 0 && *pivot <= current_stack->numbers[temp_top] 
-		&& current_stack->numbers[temp_top] < max)
-		nums[++count] = current_stack->numbers[temp_top--];
-	// for(int s = 0; s <= count; s++)
-	// 	printf("%d,", nums[s]);
-	printf("\n");
-	heap_sort(nums, count + 1);
-	if (count % 2)
-		*pivot = nums[count / 2 + 1];
-	else
-		*pivot = nums[count / 2];
-	// current_stack->flag = return_stack->numbers[return_stack->top];
-	// return_stack->flag = 2147483647;
-	memset(nums, 0, sizeof(int) * count);
-}
+// 	if (current_stack->top <= 1)
+// 	{
+// 		*pivot = current_stack->numbers[current_stack->top] + 1;
+// 		return ;
+// 	}
+// 	count = -1;
+// 	// for(int t = 0; t <= current_stack->top; t++)
+// 	// 	printf("%d,", current_stack->numbers[t]);
+// 	// printf("\n");
+// 	temp_top = current_stack->top;
+// 	if (return_stack->top == -1)
+// 		max = 2147483647;
+// 	else
+// 		max = return_stack->numbers[return_stack->top];
+// 	while (temp_top >= 0 && *pivot <= current_stack->numbers[temp_top] 
+// 		&& current_stack->numbers[temp_top] < max)
+// 		nums[++count] = current_stack->numbers[temp_top--];
+// 	// for(int s = 0; s <= count; s++)
+// 	// 	printf("%d,", nums[s]);
+// 	printf("\n");
+// 	heap_sort(nums, count + 1);
+// 	if (count % 2)
+// 		*pivot = nums[count / 2 + 1];
+// 	else
+// 		*pivot = nums[count / 2];
+// 	// current_stack->flag = return_stack->numbers[return_stack->top];
+// 	// return_stack->flag = 2147483647;
+// 	memset(nums, 0, sizeof(int) * count);
+// }
 
 // void	pivot_make(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b)
 // {
