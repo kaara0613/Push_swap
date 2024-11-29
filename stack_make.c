@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/28 11:07:02 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/29 12:27:42 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ struct stack	*make_stack_a(int argc, char **argv)
 		return (NULL);
 	stack_a->size = argc - 1;
 	stack_a->top = -1;
-	stack_a->flag = 2147483647;
-	stack_a->min = -2147483648;
+	stack_a->sorted_length = -2147483649;
 	stack_a->numbers = (int *)malloc(sizeof(int) * stack_a->size);
 	if (!stack_a->numbers)
 		return (free(stack_a), NULL);
@@ -45,36 +44,32 @@ struct stack	*make_stack_b(struct stack *stack_a)
 	if (!stack_b->numbers)
 		return (free(stack_a), NULL);
 	stack_b->top = -1;
-	stack_b->min = -2147483648;
 	return (stack_b);
 }
 
-int	*nums_allocation(int *nums, struct stack *stack_a)
+struct nums	*make_sort_arr(struct stack *stack_a)
 {
-	nums = (int *)malloc(sizeof(int) * stack_a->size);
-	if (!nums)
+	struct nums *sort_arr;
+
+	sort_arr = (struct nums *)malloc(sizeof(struct nums));
+	if (!sort_arr)
+		return (NULL);
+	sort_arr->arr = (int *)malloc(sizeof(int) * stack_a->size);
+	if (!sort_arr->arr)
 	{
 		printf("failed allocation of nums_a.");
-		return (NULL);
+		return (free(sort_arr), NULL);
 	}
-	return (nums);
+	sort_arr->pivot = 2147483647;
+	return (sort_arr);
 }
 
-void	pivot_reset_int_max(int *pivot, struct stack *stack_a, struct stack *stack_b)
-{
-	int temp;
-
-	temp = 2147483647;
-	pivot = &temp;
-	stack_a->flag = *pivot;
-	stack_b->flag = *pivot;
-}
-
-void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b)
+void	free_stack(struct nums *sort_arr, struct stack *stack_a, struct stack *stack_b)
 {
 	free(stack_a->numbers);
 	free(stack_a);
 	free(stack_b->numbers);
 	free(stack_b);
-	free(nums);
+	free(sort_arr->arr);
+	free(sort_arr);
 }
