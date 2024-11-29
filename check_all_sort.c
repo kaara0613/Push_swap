@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/23 13:44:29 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/29 17:56:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,19 @@
 // 	return (true);
 // }
 
-bool	check_pivot(int pivot, struct stack *stack_a)
-{
-	int	i;
+// bool	check_pivot(int pivot, struct stack *stack_a)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i <= stack_a->top)
-	{
-		if (stack_a->numbers[i] < pivot)
-			return (true);
-		i++;
-	}
-	return (false);
-}
+// 	i = 0;
+// 	while (i <= stack_a->top)
+// 	{
+// 		if (stack_a->numbers[i] < pivot)
+// 			return (true);
+// 		i++;
+// 	}
+// 	return (false);
+// }
 
 bool	check_sort_per_a(struct stack *stack_a)
 {

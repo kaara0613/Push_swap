@@ -6,37 +6,33 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/28 15:49:06 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/29 22:01:12 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pivot_remake(int *pivot, int *nums, struct stack *stack)
+int	pivot_remake(int flag, struct stack *stack)
 {
+	int *nums;
+	int pivot;
 	int	temp_top;
 	int count;
 	int i;
 
-	stack->flag = *pivot;
-	printf("befor:%d\n", *pivot);
-	i = count_pivot_u(*pivot, stack) - 1;//flagをpivotに変更
+	nums = nums_allocation(stack);
+	i = count_pivot_u(flag, stack) - 1;//flagをpivotに変更
 	count = i;
 	temp_top = stack->top;
 	while (i >= 0)
 		nums[i--] = stack->numbers[temp_top--];
 	heap_sort(nums, count + 1);
-	for (int r = 0; r <= count; r++)
-		printf("%d,", nums[r]);
-	printf("\n");
 	if (count % 2)
-		*pivot = nums[count / 2 + 1];
+		pivot = nums[count / 2 + 1];
 	else
-		*pivot = nums[count / 2];
-	if (stack->flag == 2147483647)
-		stack->flag = *pivot;
-	memset(nums, 0, sizeof(int) * (count + 1));
-	printf("after:%d\n", *pivot);
+		pivot = nums[count / 2];
+	free(nums);
+	return (pivot);
 }
 
 // void	return_pivot_remake(int *pivot, int *nums, struct stack *current_stack, struct stack *return_stack)

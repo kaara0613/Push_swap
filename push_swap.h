@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/28 15:48:50 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/29 22:00:28 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,11 @@ struct stack {
 	int *numbers;
 	int top;
 	int size;
-	int flag;//前々回のpivot
-	int min;
 };
 
 //push_swap.c
-void	part_pivot_ua(int *pivot, int *nums, struct stack *stack_a, struct stack *stack_b);
-void check_rotate(struct stack	*stack_a, struct stack	*stack_b);
+void	push_swap_a(int pivot, int flag, struct stack *stack_a, struct stack *stack_b);
+void	check_rotate(struct stack	*stack_a, struct stack	*stack_b);
 
 //push_swap_u.c
 int count_pivot_u(int pivot, struct stack *stack);
@@ -43,15 +41,15 @@ int count_pivot(int pivot, struct stack *stack);
 
 //check_all_sort.c
 bool	check_sort(struct stack *stack_a);
+bool	check_pivot(int pivot, struct stack *stack_a);
 // bool	check_sort_b(struct stack	*stack_b);
 // bool	check_sort_per_a(struct stack *stack_a);
 // bool	check_sort_per_b(struct stack *stack_b);
-bool	check_pivot(int pivot, struct stack *stack_a);
 
 // pivot_make.c
-void	pivot_remake(int *pivot, int *nums, struct stack *stack);
-void	return_pivot_remake(int *pivot, int *nums, struct stack *current_stack, struct stack *return_stack);
-void	stack_flag_make(int min_value, struct stack	*stack_temp);
+int	pivot_remake(int flag, struct stack *stack);
+void	return_pivot_remake(int pivot, int *nums, struct stack *current_stack, struct stack *return_stack);
+// void	stack_flag_make(int min_value, struct stack	*stack_temp)
 
 // pivot_make_u.c
 void	heap_sort(int *nums, int n);
@@ -60,9 +58,9 @@ void	heap_sort(int *nums, int n);
 //stack_make.c
 struct stack	*make_stack_a(int	argc, char	**argv);
 struct stack	*make_stack_b(struct stack	*stack_a);
-int	*nums_allocation(int *nums, struct stack *stack_a);
-void	free_stack(int *nums, struct stack *stack_a, struct stack *stack_b);
-void pivot_reset_int_max(int *pivot, struct stack *stack_a, struct stack *stack_b);
+int	*nums_allocation(struct stack *stack_a);
+void	free_stack(struct stack *stack_a, struct stack *stack_b);
+void pivot_reset_int_max(int pivot, struct stack *stack_a, struct stack *stack_b);
 
 //stack_use.c
 bool is_empty(struct stack *stack_temp);
