@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/29 15:41:45 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/29 17:35:44 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	part_pivot_ua(struct nums *sort_arr, struct stack *stack_a, struct stack *s
 {
 	int a_flag;
 		printf("a\n");
-	a_flag = sort_arr->pivot;
 	if (count_pivot_u(sort_arr->pivot, stack_a) <= 2)
 	{
 		if (stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1])
@@ -34,12 +33,13 @@ void	part_pivot_ua(struct nums *sort_arr, struct stack *stack_a, struct stack *s
 		}
 		return ;
 	}
+	a_flag = sort_arr->pivot;
 	pivot_remake(a_flag, sort_arr, stack_a);
 	partition_pivot_a(a_flag, sort_arr, stack_a, stack_b);
 	part_pivot_ub(sort_arr, stack_a, stack_b);
-	part_pivot_ua(sort_arr, stack_a, stack_b);
 	// pivot_remake(a_flag, sort_arr, stack_a);
 	// partition_pivot_a(a_flag, sort_arr, stack_a, stack_b);
+	// pivot_remake(a_flag, sort_arr, stack_a);
 	// part_pivot_ua(sort_arr, stack_a, stack_b);
 	// part_pivot_ub(sort_arr, stack_a, stack_b);
 	// return_partition_pivot_a(a_flag, sort_arr, stack_a, stack_b);
@@ -63,7 +63,6 @@ void	part_pivot_ub(struct nums *sort_arr, struct stack *stack_a, struct stack *s
 {
 	int b_flag;
 	printf("b\n");
-	b_flag = sort_arr->pivot;
 	if (count_pivot_u(sort_arr->pivot, stack_b) <= 2)
 	{
 		if (stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])
@@ -76,12 +75,13 @@ void	part_pivot_ub(struct nums *sort_arr, struct stack *stack_a, struct stack *s
 		}
 		return ;
 	}
+	b_flag = sort_arr->pivot;
 	pivot_remake(b_flag, sort_arr, stack_b);
 	partition_pivot_b(b_flag, sort_arr, stack_a, stack_b);
 	part_pivot_ua(sort_arr, stack_a, stack_b);
-	pivot_remake(b_flag, sort_arr, stack_b);
-	partition_pivot_b(b_flag, sort_arr, stack_a, stack_b);
-	part_pivot_ub(sort_arr, stack_a, stack_b);
+	// pivot_remake(b_flag, sort_arr, stack_b);
+	// partition_pivot_b(b_flag, sort_arr, stack_a, stack_b);
+	// part_pivot_ua(sort_arr, stack_a, stack_b);
 	// part_pivot_ua(sort_arr, stack_a, stack_b);
 	// return_pivot_remake(pivot, nums, stack_b, stack_a);
 	// partition_pivot_b(pivot, stack_a, stack_b);
@@ -102,7 +102,7 @@ void partition_pivot_a(int flag, struct nums *sort_arr, struct stack *stack_a, s
 {
 	int count;
 
-	count = 1;
+	count = 0;
 	while (check_pivot(flag, sort_arr, stack_a))//下にソートずみのpivot以下がくっついてる時にエラー
 	{
 		if (stack_a->numbers[stack_a->top] < sort_arr->pivot)
@@ -115,7 +115,7 @@ void partition_pivot_a(int flag, struct nums *sort_arr, struct stack *stack_a, s
 	}
 	if (flag != 2147483647)
 	{
-		while (--count > 0)
+		while (count-- > 0)
 			rra(stack_a);
 	}
 }
@@ -124,7 +124,7 @@ void partition_pivot_b(int flag, struct nums *sort_arr, struct stack *stack_a, s
 {
 	int count;
 
-	count = 1;
+	count = 0;
 	while (check_pivot(flag, sort_arr, stack_b))
 	{
 		if (stack_b->numbers[stack_b->top] < sort_arr->pivot)
@@ -137,7 +137,7 @@ void partition_pivot_b(int flag, struct nums *sort_arr, struct stack *stack_a, s
 	}
 	if (flag != 2147483647)//常に真なんかいい方法ないか？
 	{
-		while (--count > 0)
+		while (count-- > 0)
 			rrb(stack_b);
 	}
 }
