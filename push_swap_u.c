@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 08:53:21 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/30 11:27:13 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/30 14:02:39 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	count_pivot_u(int flag, struct stack *stack) //flag以下の要素数を返�
 
     i = 0;
     temp = stack->top;
-    while (stack->numbers[temp--] < flag && temp >= -1)
+    while (stack->numbers[temp] > stack->sorted_length 
+    	&& stack->numbers[temp--] < flag && temp >= -1)
         i++;
     return (i);
 }

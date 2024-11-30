@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/29 22:00:28 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/30 14:33:50 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ struct stack {
 	int *numbers;
 	int top;
 	int size;
+	long int sorted_length;
+	int rev_flag;
 };
 
 //push_swap.c
