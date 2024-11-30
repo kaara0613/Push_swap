@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/29 22:31:09 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/30 12:25:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	push_swap_a(int pivot, int flag, struct stack *stack_a, struct stack *stack
 {
 	int flag_temp;
 
+	printf("a:%d\n", count_pivot_u(flag, stack_a));
 	if (count_pivot_u(flag, stack_a) <= 2)
 	{
 		if (stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1])
@@ -34,13 +35,13 @@ void	push_swap_a(int pivot, int flag, struct stack *stack_a, struct stack *stack
 	pivot = pivot_remake(flag_temp, stack_a);
 	partition_pivot_a(pivot, flag, stack_a, stack_b);
 	push_swap_b(pivot, flag, stack_a, stack_b);
-	push_swap_a(pivot, flag, stack_a, stack_b);
+	push_swap_a(flag, flag_temp, stack_a, stack_b);
 }
 
 static void	push_swap_b(int pivot, int flag, struct stack *stack_a, struct stack *stack_b)
 {
 	int flag_temp;
-
+		printf("b:%d\n", count_pivot_u(flag, stack_b));
 	if (count_pivot_u(flag, stack_b) <= 2)
 	{
 		if (stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])
@@ -57,7 +58,7 @@ static void	push_swap_b(int pivot, int flag, struct stack *stack_a, struct stack
 	pivot = pivot_remake(flag_temp, stack_b);
 	partition_pivot_b(pivot, flag, stack_a, stack_b);
 	push_swap_a(pivot, flag, stack_a, stack_b);
-	push_swap_b(pivot, flag, stack_a, stack_b);
+	push_swap_b(flag, flag_temp, stack_a, stack_b);
 }
 
 void partition_pivot_a(int pivot, int flag, struct stack *stack_a, struct stack *stack_b)
@@ -65,11 +66,11 @@ void partition_pivot_a(int pivot, int flag, struct stack *stack_a, struct stack 
 	int count;
 
 	count = 0;
-	while (check_pivot(pivot, stack_a))
+	while (stack_a->numbers[stack_a->top] < flag && check_pivot(pivot, stack_a))
 	{
 		if (stack_a->numbers[stack_a->top] < pivot)
 			pb(stack_a, stack_b);
-		else//無条件でelseしてるから無限にraする可能性がある
+		else //無条件でelseしてるから無限にraする可能性がある
 		{
 			ra(stack_a);
 			count++;
@@ -87,7 +88,7 @@ void partition_pivot_b(int pivot, int flag, struct stack *stack_a, struct stack 
 	int count;
 
 	count = 0;
-	while (check_pivot(pivot, stack_b))
+	while (stack_b->numbers[stack_b->top] < flag && check_pivot(pivot, stack_b))
 	{
 		if (stack_b->numbers[stack_b->top] < pivot)
 			pa(stack_a, stack_b);
@@ -102,3 +103,12 @@ void partition_pivot_b(int pivot, int flag, struct stack *stack_a, struct stack 
 	while (count-- > 0)
 		rrb(stack_b);
 }
+
+// void sort_before_return_a(int pivot, int flag, struct stack *stack_a)
+// {
+// 	if (stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1])
+// 		sa(stack_a);
+// 	ra(stack_a);
+// 	if (stack_a->numbers[stack_a->top - 1] > stack_a->numbers[stack_a->top - 2])
+// 		ra()
+// }
