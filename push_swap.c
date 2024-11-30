@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/30 12:25:24 by kaara            ###   ########.fr       */
+/*   Updated: 2024/11/30 13:06:33 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	push_swap_b(int pivot, int flag, struct stack *stack_a, struct stack
 	{
 		if (stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])
 			sb(stack_b);
-		while (stack_b->numbers[stack_b->top] < flag)
+		while (stack_b->top > -1 && stack_b->numbers[stack_b->top] < flag)
 		{
 			pa(stack_a, stack_b);
 			ra(stack_a);
