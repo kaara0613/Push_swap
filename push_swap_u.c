@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 08:53:21 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 10:13:50 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void partition_pivot_a(int pivot, int flag, struct stack *stack_a, struct stack *stack_b)
+void partition_pivot_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (stack_a->numbers[stack_a->top] < flag && check_pivot(pivot, stack_a)
@@ -37,10 +37,9 @@ void partition_pivot_a(int pivot, int flag, struct stack *stack_a, struct stack 
 		rra(stack_a);
 }
 
-void partition_pivot_b(int pivot, int flag, struct stack *stack_a, struct stack *stack_b)
+void partition_pivot_b(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
-
-	int count;
+	int	count;
 
 	count = 0;
 	while (stack_b->numbers[stack_b->top] < flag && check_pivot(pivot, stack_b))

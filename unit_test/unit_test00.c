@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unit_test00.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:55:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/24 14:51:38 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	struct stack	*stack_a;
-	struct stack	*stack_b;
+	struct s_stack	*stack_a;
+	struct s_stack	*stack_b;
 	int				*nums;
 	int				pivot;
 

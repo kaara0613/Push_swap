@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 10:13:19 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void partition_pivot_a(int pivot, int flag, struct stack *stack_a, struct stack *stack_b);
-void partition_pivot_b(int pivot, int flag, struct stack *stack_a, struct stack *stack_b);
-static void push_swap_b(int pivot, int flag, struct stack *stack_a, struct stack *stack_b);
+static void	push_swap_b(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b);
 
-void	push_swap_a(int pivot, int flag, struct stack *stack_a, struct stack *stack_b)
+void	push_swap_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
-	int flag_temp;
+	int	flag_temp;
 
 	if (count_pivot_u(flag, stack_a) <= 2)
 	{
@@ -38,9 +36,10 @@ void	push_swap_a(int pivot, int flag, struct stack *stack_a, struct stack *stack
 	push_swap_a(flag, flag_temp, stack_a, stack_b);
 }
 
-static void	push_swap_b(int pivot, int flag, struct stack *stack_a, struct stack *stack_b)
+static void	push_swap_b(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
-	int flag_temp;
+	int	flag_temp;
+
 	if (count_pivot_u(flag, stack_b) <= 2)
 	{
 		if (stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])

@@ -6,27 +6,27 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:08:39 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:37:35 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	is_empty(struct stack *stack_temp)
+bool	is_empty(struct s_stack *stack_temp)
 {
 	if (stack_temp->top == -1)
 		return (true);
 	return (false);
 }
 
-bool	is_full(struct stack *stack_temp)
+bool	is_full(struct s_stack *stack_temp)
 {
 	if (stack_temp->top == stack_temp->size - 1)
 		return (true);
 	return (false);
 }
 
-bool	put(int input_value, struct stack *stack_temp)
+bool	put(int input_value, struct s_stack *stack_temp)
 {
 	if (is_full(stack_temp))
 	{
@@ -38,7 +38,7 @@ bool	put(int input_value, struct stack *stack_temp)
 	return (true);
 }
 
-int	pop(struct stack *stack_temp)
+int	pop(struct s_stack *stack_temp)
 {
 	int	return_value;
 

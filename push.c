@@ -6,13 +6,13 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:24:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/20 11:37:49 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	pa(struct stack *stack_a, struct stack *stack_b)
+bool	pa(struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int	temp;
 
@@ -32,7 +32,7 @@ bool	pa(struct stack *stack_a, struct stack *stack_b)
 	return (true);
 }
 
-bool	pb(struct stack *stack_a, struct stack *stack_b)
+bool	pb(struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int	temp;
 

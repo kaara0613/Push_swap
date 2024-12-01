@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:54:45 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 11:38:49 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	check_pivot(int pivot, struct stack *stack_a)
+bool	check_pivot(int pivot, struct s_stack *stack_a)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ bool	check_pivot(int pivot, struct stack *stack_a)
 	return (false);
 }
 
-bool	check_sort(struct stack *stack_a)
+bool	check_sort(struct s_stack *stack_a)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ bool	check_sort(struct stack *stack_a)
 	return (true);
 }
 
-bool	check_sort_per_a(struct stack *stack)
+bool	check_sort_per_a(struct s_stack *stack)
 {
 	int	i;
 

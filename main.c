@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 11:37:06 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	struct stack	*stack_a;
-	struct stack	*stack_b;
+	struct s_stack	*stack_a;
+	struct s_stack	*stack_b;
 
 	if (argc <= 1)
 		return (0);
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	}
 	stack_a = make_stack_a(argc, argv);
 	stack_b = make_stack_b(stack_a);
-	if(!check_error_case(stack_a))
+	if (!check_error_case(stack_a))
 		return (0);
 	push_swap_a(2147483647, 2147483647, stack_a, stack_b);
 	free_stack(stack_a, stack_b);
