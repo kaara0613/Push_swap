@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errorcase_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 14:27:23 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 00:31:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,41 @@ bool	check_duplicate_nums(struct s_stack *stack)
 			return (false);
 		i++;
 	}
+	return (true);
+}
+
+bool check_args_figure(int argc, char **argv)
+{
+    int i;
+    int j;
+	
+    i = 0;
+    while (j < argc)
+    {
+        while (*argv[i] == '\0')
+        {
+            if (!(48 <= *argv[i] && *argv[i] <= 57))
+            	return (false);
+        	i++;
+        }
+        j++;
+    }
+    return (true);
+
+}
+
+bool check_overflow(int argc, char **argv)
+{
+    int i;
+
+    i = 0;
+    while (i++ < argc)
+    {
+        if(atoi(*argv++) >= 2147483648)
+        {
+			printf("Error\n");
+        	return (false);
+        }
+    }
 	return (true);
 }

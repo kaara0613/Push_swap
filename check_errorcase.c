@@ -3,26 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   check_errorcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 14:36:04 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 00:31:38 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// bool	check_error_args(int argc, char **argv)
-// {
-// 	if (argc <= 1)
-// 		return (false);
-// 	if (argc == 2)
-// 	{
-// 		printf("already sorted.");
-// 		return (false);
-// 	}
-// 	return (true);
-// }
+bool	check_error_args(int argc, char **argv)
+{
+	if (argc <= 1)
+		return (false);
+	else if (argc == 2)
+	{
+		printf("already sorted.");
+		return (false);
+	}
+    else if(!check_args_figure(argc, argv))
+    	return (false);
+    else if (!check_overflow(argc, argv));
+    	return (false);
+
+	return (true);
+}
 
 bool	check_error_case(struct s_stack *stack)
 {
