@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*   check_errorcase_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 15:43:06 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 10:20:58 by kaara            ###   ########.fr       */
+/*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
+/*   Updated: 2024/12/01 11:59:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void rev_rotate(struct stack *stack_temp);
-
-void	rra(struct stack *stack_a)
+bool	check_Duplicate_nums(struct stack *stack)
 {
-	rev_rotate(stack_a);
-	printf("rra\n");
-}
-
-void	rrb(struct stack *stack_b)
-{
-	rev_rotate(stack_b);
-	printf("rrb\n");
-}
-
-static void rev_rotate(struct stack *stack_temp)
-{
-	int	i;
-	int	temp;
+    int i;
+	int *nums;
 
 	i = 0;
-	temp = stack_temp->numbers[i];
-	while (i < stack_temp->top)
-	{
-		stack_temp->numbers[i] = stack_temp->numbers[i + 1];
+    nums = nums_allocation(stack);
+    memcpy(nums, stack->numbers, sizeof(int) * stack->size);
+    heap_sort(nums, stack->top + 1);
+    while (i < stack->top)
+    {
+        if (nums[i] == nums[i + 1])
+        	return (false);
 		i++;
-	}
-	stack_temp->numbers[stack_temp->top] = temp;
+    }
+    return (true);
 }

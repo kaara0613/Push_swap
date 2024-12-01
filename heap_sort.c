@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pivot_make_u.c                                     :+:      :+:    :+:   */
+/*   heap_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 12:40:43 by kaara             #+#    #+#             */
-/*   Updated: 2024/11/25 20:07:04 by kaara            ###   ########.fr       */
+/*   Created: 2024/12/01 10:12:56 by kaara             #+#    #+#             */
+/*   Updated: 2024/12/01 11:55:23 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static	void	heapify(int *nums, int n, int i)
 	left = 2 * i + 1;
 	right = 2 * i + 2;
 
-	if (left < n && nums[left] > nums[largest])
+	if (left < n && nums[left] >= nums[largest])
 		largest = left;
-	if (right < n && nums[right] > nums[largest])
+	if (right < n && nums[right] >= nums[largest])
 		largest = right;
 	if (largest != i)
 	{
