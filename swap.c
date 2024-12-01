@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:46:54 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 14:18:49 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ static struct s_stack	*head_swap(struct s_stack *stack_temp)
 	if (stack_temp->top < 1)
 		return (NULL);
 	temp = stack_temp->numbers[stack_temp->top];
-	stack_temp->numbers[stack_temp->top] = stack_temp->numbers[stack_temp->top - 1];
+	stack_temp->numbers[stack_temp->top] 
+		= stack_temp->numbers[stack_temp->top - 1];
 	stack_temp->numbers[stack_temp->top - 1] = temp;
 	return (stack_temp);
 }
