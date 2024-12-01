@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 13:01:20 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 14:26:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	partition_pivot_b(int pivot, int flag, struct s_stack *stack_a, struct s_st
 
 //check_errorcase.c
 bool	check_error_case(struct s_stack *stack);
+bool	check_error_args(int argc, char **argv);
 
 //check_errorcase_u.c
 bool	check_duplicate_nums(struct s_stack *stack);

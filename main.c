@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 14:35:35 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,8 @@ int	main(int argc, char **argv)
 	struct s_stack	*stack_a;
 	struct s_stack	*stack_b;
 
-	if (argc <= 1)
-		return (0);
-	if (argc == 2)
-	{
-		printf("already sorted.");
-		return (0);
-	}
+	// if (!check_error_args(argc, argv))
+	// 	return (0);
 	stack_a = make_stack_a(argc, argv);
 	stack_b = make_stack_b(stack_a);
 	if (!check_error_case(stack_a))

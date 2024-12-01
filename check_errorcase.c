@@ -6,11 +6,23 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/01 14:36:04 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// bool	check_error_args(int argc, char **argv)
+// {
+// 	if (argc <= 1)
+// 		return (false);
+// 	if (argc == 2)
+// 	{
+// 		printf("already sorted.");
+// 		return (false);
+// 	}
+// 	return (true);
+// }
 
 bool	check_error_case(struct s_stack *stack)
 {
@@ -21,7 +33,7 @@ bool	check_error_case(struct s_stack *stack)
 	}
 	if (check_sort_per_a(stack))
 	{
-		printf("alredy sorted.");
+		printf("already sorted.");
 		return (false);
 	}
 	return (true);
