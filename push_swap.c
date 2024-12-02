@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:02 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 20:28:13 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	push_swap_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *s
 	{
 		if (stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1])
 			sa(stack_a);
-		while (stack_a->numbers[stack_a->top] < flag
+		while (stack_a->numbers[stack_a->top] < flag && !check_sort_per_a(stack_a)
 			&& stack_a->numbers[stack_a->top] > stack_a->sorted_length)
 			ra(stack_a);
 		stack_a->sorted_length = stack_a->numbers[0];
