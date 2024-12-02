@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 13:09:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 15:14:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ bool	check_error_args(int argc, char **argv)
     	return (false);
     else if (!check_overflow(argc, argv))
     	return (false);
-
-	return (true);
+	else
+		return (true);
 }
 
 bool	check_error_case(struct s_stack *stack)
@@ -36,10 +36,11 @@ bool	check_error_case(struct s_stack *stack)
 		printf("There are duplicate numbers.");
 		return (false);
 	}
-	if (check_sort_per_a(stack))
+	else if (check_sort_per_a(stack))
 	{
 		printf("already sorted.");
 		return (false);
 	}
-	return (true);
+	else
+		return (true);
 }

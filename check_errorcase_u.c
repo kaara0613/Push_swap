@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 13:09:40 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 15:16:21 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ bool	check_duplicate_nums(struct s_stack *stack)
 	while (i < stack->top)
 	{
 		if (nums[i] == nums[i + 1])
+        {
+            // printf("Error\n");
 			return (false);
+        }
 		i++;
 	}
 	return (true);
@@ -32,23 +35,25 @@ bool	check_duplicate_nums(struct s_stack *stack)
 
 bool check_args_figure(int argc, char **argv)
 {
-    int i;
     int j;
-	
-    i = 0;
-    j = 0;
+    int i;
+
+    j = 1;
     while (j < argc)
     {
-        while (*argv[i] == '\0')
+        i = 0;
+        while (argv[j][i] != '\0')
         {
-            if (!(48 <= *argv[i] && *argv[i] <= 57))
+            if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
+            {
+                printf("Error\n");
             	return (false);
+            }
         	i++;
         }
         j++;
     }
     return (true);
-
 }
 
 bool check_overflow(int argc, char **argv)
