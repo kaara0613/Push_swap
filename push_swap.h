@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 14:26:37 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:08:39 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <string.h>
-
+#include <limits.h>
+#include "libft.h"
 
 struct s_stack {
 	int			*numbers;
@@ -41,6 +42,9 @@ bool	check_error_args(int argc, char **argv);
 
 //check_errorcase_u.c
 bool	check_duplicate_nums(struct s_stack *stack);
+bool check_args_figure(int argc, char **argv);
+bool check_overflow(int argc, char **argv);
+
 
 //count_pivot.c
 int		count_pivot_u(int pivot, struct s_stack *stack);
@@ -70,8 +74,8 @@ bool	put(int input_value, struct s_stack *stack_temp);
 int		pop(struct s_stack *stack_temp);
 
 //push.c
-bool	pa(struct s_stack *stack_a, struct s_stack *stack_b);
-bool	pb(struct s_stack *stack_a, struct s_stack *stack_b);
+bool	pa(struct s_stack *s_stack_a, struct s_stack *stack_b);
+bool	pb(struct s_stack *s_stack_a, struct s_stack *stack_b);
 
 //rotate.c
 void	ra(struct s_stack *stack_a);
@@ -82,7 +86,7 @@ void	rra(struct s_stack *stack_a);
 void	rrb(struct s_stack *stack_b);
 
 //swap.c
-void	sa(struct s_stack *stack_a);
-void	sb(struct s_stack *stack_b);
+void	sa(struct s_stack *s_stack_a);
+void	sb(struct s_stack *s_stack_b);
 
 #endif

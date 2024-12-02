@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:12:56 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 11:55:23 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:03:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static	void	heapify(int *nums, int n, int i)
 	left = 2 * i + 1;
 	right = 2 * i + 2;
 
-	if (left < n && nums[left] >= nums[largest])
+	if (left < n && nums[left] > nums[largest])
 		largest = left;
-	if (right < n && nums[right] >= nums[largest])
+	if (right < n && nums[right] > nums[largest])
 		largest = right;
 	if (largest != i)
 	{

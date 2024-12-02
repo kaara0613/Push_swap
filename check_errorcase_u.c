@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 00:31:29 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:09:40 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ bool check_args_figure(int argc, char **argv)
     int j;
 	
     i = 0;
+    j = 0;
     while (j < argc)
     {
         while (*argv[i] == '\0')
@@ -57,7 +58,7 @@ bool check_overflow(int argc, char **argv)
     i = 0;
     while (i++ < argc)
     {
-        if(atoi(*argv++) >= 2147483648)
+        if(ft_atoi(*argv++) == LONG_MAX)
         {
 			printf("Error\n");
         	return (false);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_make.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:05:41 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ struct s_stack	*make_stack_a(int argc, char **argv)
 		return (NULL);
 	stack_a->size = argc - 1;
 	stack_a->top = -1;
-	stack_a->sorted_length = -2147483649;
+	stack_a->sorted_length = LONG_MIN;
 	stack_a->rev_flag = 0;
 	stack_a->numbers = (int *)malloc(sizeof(int) * stack_a->size);
 	if (!stack_a->numbers)
 		return (free(stack_a), NULL);
 	while (count > 0)
-		stack_a->numbers[++stack_a->top] = atoi(argv[count--]);
+		stack_a->numbers[++stack_a->top] = ft_atoi(argv[count--]);
 	return (stack_a);
 }
 
