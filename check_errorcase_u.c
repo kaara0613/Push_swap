@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 15:16:21 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/03 22:31:21 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,13 @@ bool check_args_figure(int argc, char **argv)
     j = 1;
     while (j < argc)
     {
-        i = 0;
+        i = 1;
+        if (argv[j][0] != '+' && argv[j][0] != '-'
+        	&& !('0' <= argv[j][0] && argv[j][0] <= '9'))
+        {
+            printf("Error\n");
+            return (false);
+        }
         while (argv[j][i] != '\0')
         {
             if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
