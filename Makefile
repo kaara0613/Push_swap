@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/02 14:43:19 by kaara            ###   ########.fr        #
+#    Updated: 2024/12/04 13:04:38 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,8 @@ $(NAME): $(OBJS) $(LIBFT)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
--include $(OBJS:.o=.d)
-
 clean:
-	rm -f $(OBJS) $(OBJS:.o=.d)
+	rm -f $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
