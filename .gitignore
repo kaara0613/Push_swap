@@ -1,5 +1,7 @@
 *.a
 *.out
 *.o
+out
+libft
 .vscode/
 checker_linux
