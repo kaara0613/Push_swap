@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-bool	check_duplicate_nums(struct s_stack *stack)
+bool	check_duplicate_nums(t_stack *stack)
 {
 	int	i;
 	int	*nums;

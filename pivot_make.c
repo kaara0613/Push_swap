@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	pivot_remake(int flag, struct s_stack *stack)
+int	pivot_remake(int flag, t_stack *stack)
 {
 	int	*nums;
 	int	pivot;

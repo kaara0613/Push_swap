@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-static struct s_stack	*head_swap(struct s_stack *stack_temp);
+static t_stack	*head_swap(t_stack *stack_temp);
 
-void	sa(struct s_stack *stack_a)
+void	sa(t_stack *stack_a)
 {
 	stack_a = head_swap(stack_a);
 	printf("sa\n");
 }
 
-void	sb(struct s_stack *stack_b)
+void	sb(t_stack *stack_b)
 {
 	stack_b = head_swap(stack_b);
 	printf("sb\n");
 }
 
-static struct s_stack	*head_swap(struct s_stack *stack_temp)
+static t_stack	*head_swap(t_stack *stack_temp)
 {
 	int	temp;
 

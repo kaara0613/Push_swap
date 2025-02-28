@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-static void rotate(struct s_stack *stack_temp);
+static void rotate(t_stack *stack_temp);
 
-void	ra(struct s_stack *stack_a)
+void	ra(t_stack *stack_a)
 {
 	rotate(stack_a);
 	printf ("ra\n");
 }
 
-void	rb(struct s_stack *stack_b)
+void	rb(t_stack *stack_b)
 {
 	rotate(stack_b);
 	printf ("rb\n");
 }
 
-static void rotate(struct s_stack *stack_temp)
+static void rotate(t_stack *stack_temp)
 {
 	int	i;
 	int	temp;

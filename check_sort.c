@@ -78,7 +78,7 @@
 // 	return (false);
 // }
 
-bool	check_pivot(int flag, struct nums *sort_arr, struct stack *stack_a)
+bool	check_pivot(int flag, struct nums *sort_arr, t_stack *stack_a)
 {
 	int	i;
 
@@ -93,7 +93,7 @@ bool	check_pivot(int flag, struct nums *sort_arr, struct stack *stack_a)
 	return (false);
 }
 
-bool	check_sort(struct s_stack *stack_a)
+bool	check_sort(t_stack *stack_a)
 {
 	int	i;
 
@@ -107,7 +107,7 @@ bool	check_sort(struct s_stack *stack_a)
 	return (true);
 }
 
-bool	check_sort_per_a(struct s_stack *stack)
+bool	check_sort_per_a(t_stack *stack)
 {
 	int	i;
 

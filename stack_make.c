@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-struct s_stack	*make_stack_a(int argc, char **argv)
+t_stack	*make_stack_a(int argc, char **argv)
 {
 	int				count;
-	struct s_stack	*stack_a;
+	t_stack	*stack_a;
 
 	count = argc - 1;
-	stack_a = (struct s_stack *)malloc(sizeof(struct s_stack));
+	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_a)
 		return (NULL);
 	stack_a->size = argc - 1;
@@ -33,11 +33,11 @@ struct s_stack	*make_stack_a(int argc, char **argv)
 	return (stack_a);
 }
 
-struct s_stack	*make_stack_b(struct s_stack *stack_a)
+t_stack	*make_stack_b(t_stack *stack_a)
 {
-	struct s_stack	*stack_b;
+	t_stack	*stack_b;
 
-	stack_b = (struct s_stack *)malloc(sizeof(struct s_stack));
+	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_b)
 		return (NULL);
 	stack_b->size = stack_a->size;
@@ -49,7 +49,7 @@ struct s_stack	*make_stack_b(struct s_stack *stack_a)
 	return (stack_b);
 }
 
-int	*nums_allocation(struct s_stack *stack)
+int	*nums_allocation(t_stack *stack)
 {
 	int *nums;
 
@@ -62,7 +62,7 @@ int	*nums_allocation(struct s_stack *stack)
 	return (nums);
 }
 
-void	free_stack(struct s_stack *stack_a, struct s_stack *stack_b)
+void	free_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	free(stack_a->numbers);
 	free(stack_a);

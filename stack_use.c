@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-bool	is_empty(struct s_stack *stack_temp)
+bool	is_empty(t_stack *stack_temp)
 {
 	if (stack_temp->top == -1)
 		return (true);
 	return (false);
 }
 
-bool	is_full(struct s_stack *stack_temp)
+bool	is_full(t_stack *stack_temp)
 {
 	if (stack_temp->top == stack_temp->size - 1)
 		return (true);
 	return (false);
 }
 
-bool	put(int input_value, struct s_stack *stack_temp)
+bool	put(int input_value, t_stack *stack_temp)
 {
 	if (is_full(stack_temp))
 	{
@@ -38,7 +38,7 @@ bool	put(int input_value, struct s_stack *stack_temp)
 	return (true);
 }
 
-int	pop(struct s_stack *stack_temp)
+int	pop(t_stack *stack_temp)
 {
 	int	return_value;
 

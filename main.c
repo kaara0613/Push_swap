@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	struct s_stack	*stack_a;
-	struct s_stack	*stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	if (!check_error_args(argc, argv))
 		return(0);

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	count_pivot_u(int flag, struct s_stack *stack)
+int	count_pivot_u(int flag, t_stack *stack)
 {
 	int	i;
 	int	temp;
@@ -25,7 +25,7 @@ int	count_pivot_u(int flag, struct s_stack *stack)
 	return (i);
 }
 
-int	count_pivot(int flag, struct s_stack *stack)
+int	count_pivot(int flag, t_stack *stack)
 {
 	int	i;
 	int	temp;

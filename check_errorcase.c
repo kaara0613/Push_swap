@@ -29,7 +29,7 @@ bool	check_error_args(int argc, char **argv)
 		return (true);
 }
 
-bool	check_error_case(struct s_stack *stack)
+bool	check_error_case(t_stack *stack)
 {
 	if (!check_duplicate_nums(stack))
 	{

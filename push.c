@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-bool	pa(struct s_stack *stack_a, struct s_stack *stack_b)
+bool	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	int	temp;
 
@@ -32,7 +32,7 @@ bool	pa(struct s_stack *stack_a, struct s_stack *stack_b)
 	return (true);
 }
 
-bool	pb(struct s_stack *stack_a, struct s_stack *stack_b)
+bool	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	int	temp;
 
