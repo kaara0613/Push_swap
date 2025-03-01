@@ -15,13 +15,17 @@
 int	count_pivot_u(int flag, t_stack *stack)
 {
 	int	i;
-	int	temp;
+	int	tmp;
 
 	i = 0;
-	temp = stack->top;
-	while (stack->numbers[temp] > stack->sorted_length
-		&& stack->numbers[temp--] < flag && temp >= -1)
+	tmp = 0;
+	while (tmp <= stack->top
+		&& stack->numbers[tmp] > stack->sorted_length
+		&& stack->numbers[tmp] < flag)
+	{
+		tmp++;
 		i++;
+	}
 	return (i);
 }
 

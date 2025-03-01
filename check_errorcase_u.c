@@ -19,7 +19,7 @@ bool	check_duplicate_nums(t_stack *stack)
 
 	i = 0;
 	nums = nums_allocation(stack);
-	memcpy(nums, stack->numbers, sizeof(int) * stack->size);
+	ft_memcpy(nums, stack->numbers, sizeof(int) * stack->size);
 	heap_sort(nums, stack->top + 1);
 	while (i < stack->top)
 	{

@@ -16,17 +16,16 @@ bool	check_error_args(int argc, char **argv)
 {
 	if (argc <= 1)
 		return (false);
-	else if (argc == 2)
+	if (argc == 2)
 	{
 		printf("already sorted.");
 		return (false);
 	}
-    else if(!check_args_figure(argc, argv))
-    	return (false);
-    else if (!check_overflow(argc, argv))
-    	return (false);
-	else
-		return (true);
+    if(!check_args_figure(argc, argv))
+		return (false);
+    if (!check_overflow(argc, argv))
+		return (false);
+	return (true);
 }
 
 bool	check_error_case(t_stack *stack)
@@ -36,11 +35,10 @@ bool	check_error_case(t_stack *stack)
 		printf("There are duplicate numbers.");
 		return (false);
 	}
-	else if (check_sort_per_a(stack))
+	if (check_sort_per_a(stack))
 	{
 		printf("already sorted.");
 		return (false);
 	}
-	else
-		return (true);
+	return (true);
 }
