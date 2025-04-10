@@ -15,6 +15,7 @@
 struct s_stack	*make_stack_a(int argc, char **argv)
 {
 	int				count;
+	int				*tmp;
 	struct s_stack	*stack_a;
 
 	count = argc - 1;
@@ -30,6 +31,9 @@ struct s_stack	*make_stack_a(int argc, char **argv)
 		return (free(stack_a), NULL);
 	while (count > 0)
 		stack_a->numbers[++stack_a->top] = ft_atoi(argv[count--]);
+	tmp = coordinate_compression(stack_a->numbers, stack_a->size);
+	free(stack_a->numbers);
+	stack_a->numbers = tmp;
 	return (stack_a);
 }
 

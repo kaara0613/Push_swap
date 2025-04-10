@@ -18,7 +18,8 @@ SRCS = main.c \
        pivot_make.c count_pivot.c heap_sort.c \
        push_swap.c push_swap_u.c \
        check_sort.c \
-       push.c rotate.c rev_rotate.c swap.c
+       push.c rotate.c rev_rotate.c swap.c\
+	   coordinate_compression.c\
 
 OBJS = $(SRCS:.c=.o)
 

@@ -20,7 +20,7 @@
 #include <strings.h>
 #include <string.h>
 #include <limits.h>
-#include "libft.h"
+#include "../libft/include/ft_libft.h"
 
 struct s_stack {
 	int			*numbers;
@@ -29,6 +29,8 @@ struct s_stack {
 	int			rev_flag;
 	long int	sorted_length;
 };
+
+int		*coordinate_compression(int *arr, int elements_nbr);
 
 //push_swap.c
 void	push_swap_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b);
