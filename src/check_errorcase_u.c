@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_libft.h"
 
 bool	check_duplicate_nums(struct s_stack *stack)
 {
@@ -19,7 +20,7 @@ bool	check_duplicate_nums(struct s_stack *stack)
 
 	i = 0;
 	nums = nums_allocation(stack);
-	memcpy(nums, stack->numbers, sizeof(int) * stack->size);
+	ft_memcpy(nums, stack->numbers, sizeof(int) * stack->size);
 	heap_sort(nums, stack->top + 1);
 	while (i < stack->top)
 	{
@@ -69,7 +70,7 @@ bool check_overflow(int argc, char **argv)
     i = 0;
     while (i++ < argc)
     {
-        if(ft_atoi(*argv++) == LONG_MAX)
+        if(p_atoi(*argv++) == LONG_MAX)
         {
 			printf("Error\n");
         	return (false);

@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-static void	push_swap_b(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b);
+static void	push_swap_b(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 
-void	push_swap_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
+void	push_swap_a(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
-	int	flag_temp;
+	long	flag_temp;
 
 	if (count_pivot_u(flag, stack_a) <= 2)
 	{
@@ -36,9 +36,9 @@ void	push_swap_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *s
 	push_swap_a(flag, flag_temp, stack_a, stack_b);
 }
 
-static void	push_swap_b(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
+static void	push_swap_b(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
-	int	flag_temp;
+	long	flag_temp;
 
 	if (count_pivot_u(flag, stack_b) <= 2)
 	{

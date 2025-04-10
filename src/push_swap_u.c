@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void partition_pivot_a(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
+void partition_pivot_a(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ void partition_pivot_a(int pivot, int flag, struct s_stack *stack_a, struct s_st
 		rra(stack_a);
 }
 
-void partition_pivot_b(int pivot, int flag, struct s_stack *stack_a, struct s_stack *stack_b)
+void partition_pivot_b(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int	count;
 

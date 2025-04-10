@@ -29,7 +29,10 @@ struct s_stack	*make_stack_a(int argc, char **argv)
 	if (!stack_a->numbers)
 		return (free(stack_a), NULL);
 	while (count > 0)
-		stack_a->numbers[++stack_a->top] = ft_atoi(argv[count--]);
+		stack_a->numbers[++stack_a->top] = p_atoi(argv[count--]);
+	// int	*tmp = coordinate_compression(stack_a->numbers, stack_a->size);
+	// free(stack_a->numbers);
+	// stack_a->numbers = tmp;
 	return (stack_a);
 }
 
@@ -41,6 +44,7 @@ struct s_stack	*make_stack_b(struct s_stack *stack_a)
 	if (!stack_b)
 		return (NULL);
 	stack_b->size = stack_a->size;
+	stack_b->sorted_length = LONG_MIN;
 	stack_b->rev_flag = 0;
 	stack_b->numbers = (int *)malloc(sizeof(int) * stack_b->size);
 	if (!stack_b->numbers)

@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pivot_make.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 13:07:37 by kaara            ###   ########.fr       */
+/*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
+/*   Updated: 2024/12/02 13:03:17 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	pivot_remake(long flag, struct s_stack *stack)
 {
-	struct s_stack	*stack_a;
-	struct s_stack	*stack_b;
+	int	*nums;
+	int	pivot;
+	int	temp_top;
+	int	count;
+	int	i;
 
-	if (!check_error_args(argc, argv))
-		return(0);
-	stack_a = make_stack_a(argc, argv);
-	stack_b = make_stack_b(stack_a);
-	if(!check_error_case(stack_a))
-		return (0);
-	push_swap_a(INT_MAX, INT_MAX, stack_a, stack_b);
-	free_stack(stack_a, stack_b);
-	return (0);
+	nums = nums_allocation(stack);
+	i = count_pivot_u(flag, stack) - 1;//flagをpivotに変更
+	count = i;
+	temp_top = stack->top;
+	while (i >= 0)
+		nums[i--] = stack->numbers[temp_top--];
+	heap_sort(nums, count + 1);
+	if (count % 2)
+		pivot = nums[count / 2 + 1];
+	else
+		pivot = nums[count / 2];
+	free(nums);
+	return (pivot);
 }
