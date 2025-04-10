@@ -28,7 +28,7 @@ SRCS = src/main.c \
 	   src/rev_rotate.c \
 	   src/swap.c \
 	   src/p_atoi.c \
-	   src/coordinate_compression.c
+	   src/sort_small_array.c
 
 OBJS = $(SRCS:.c=.o)
 
