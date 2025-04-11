@@ -21,7 +21,7 @@ int	pivot_remake(long flag, struct s_stack *stack)
 	int	i;
 
 	nums = nums_allocation(stack);
-	i = count_pivot_u(flag, stack) - 1;//flagをpivotに変更
+	i = count_pivot_u(flag, stack) - 1;
 	count = i;
 	temp_top = stack->top;
 	while (i >= 0)

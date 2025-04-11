@@ -11,19 +11,20 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf.h"
 
 static void rotate(struct s_stack *stack_temp);
 
 void	ra(struct s_stack *stack_a)
 {
 	rotate(stack_a);
-	printf ("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rb(struct s_stack *stack_b)
 {
 	rotate(stack_b);
-	printf ("rb\n");
+	ft_printf("rb\n");
 }
 
 static void rotate(struct s_stack *stack_temp)

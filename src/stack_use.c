@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf.h"
 
 bool	is_empty(struct s_stack *stack_temp)
 {
@@ -30,7 +31,7 @@ bool	put(int input_value, struct s_stack *stack_temp)
 {
 	if (is_full(stack_temp))
 	{
-		printf("This stack is full.");
+		ft_printf("This stack is full.");
 		return (false);
 	}
 	stack_temp->numbers[stack_temp->top + 1] = input_value;
@@ -44,7 +45,7 @@ int	pop(struct s_stack *stack_temp)
 
 	if (is_empty(stack_temp))
 	{
-		printf("This stack is empty");
+		ft_printf("This stack is empty");
 		return (-1);
 	}
 	return_value = stack_temp->numbers[stack_temp->top];

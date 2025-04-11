@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 #include "ft_libft.h"
+#include "ft_printf.h"
 
 bool	check_duplicate_nums(struct s_stack *stack)
 {
@@ -25,10 +26,7 @@ bool	check_duplicate_nums(struct s_stack *stack)
 	while (i < stack->top)
 	{
 		if (nums[i] == nums[i + 1])
-        {
-            // printf("Error\n");
 			return (false);
-        }
 		i++;
 	}
 	return (true);
@@ -46,14 +44,14 @@ bool check_args_figure(int argc, char **argv)
         if (argv[j][0] != '+' && argv[j][0] != '-'
         	&& !('0' <= argv[j][0] && argv[j][0] <= '9'))
         {
-            printf("Error\n");
+            ft_printf("Error\n");
             return (false);
         }
         while (argv[j][i] != '\0')
         {
             if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
             {
-                printf("Error\n");
+                ft_printf("Error\n");
             	return (false);
             }
         	i++;
@@ -72,7 +70,7 @@ bool check_overflow(int argc, char **argv)
     {
         if(p_atoi(*argv++) == LONG_MAX)
         {
-			printf("Error\n");
+			ft_printf("Error\n");
         	return (false);
         }
     }

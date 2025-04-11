@@ -11,36 +11,29 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf.h"
 
 bool	check_error_args(int argc, char **argv)
 {
 	if (argc <= 1)
 		return (false);
 	else if (argc == 2)
-	{
-		printf("already sorted.");
 		return (false);
-	}
-    else if(!check_args_figure(argc, argv))
+    if (!check_args_figure(argc, argv))
     	return (false);
-    else if (!check_overflow(argc, argv))
-    	return (false);
-	else
-		return (true);
+    if (!check_overflow(argc, argv))
+		return (false);
+	return (true);
 }
 
 bool	check_error_case(struct s_stack *stack)
 {
 	if (!check_duplicate_nums(stack))
 	{
-		printf("There are duplicate numbers.");
+		ft_printf("Error\n");
 		return (false);
 	}
-	else if (check_sort_per_a(stack))
-	{
-		printf("already sorted.");
+	if (check_sort_per_a(stack))
 		return (false);
-	}
-	else
-		return (true);
+	return (true);
 }

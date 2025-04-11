@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf.h"
 
 struct s_stack	*make_stack_a(int argc, char **argv)
 {
@@ -30,9 +31,6 @@ struct s_stack	*make_stack_a(int argc, char **argv)
 		return (free(stack_a), NULL);
 	while (count > 0)
 		stack_a->numbers[++stack_a->top] = p_atoi(argv[count--]);
-	// int	*tmp = coordinate_compression(stack_a->numbers, stack_a->size);
-	// free(stack_a->numbers);
-	// stack_a->numbers = tmp;
 	return (stack_a);
 }
 
@@ -60,7 +58,7 @@ int	*nums_allocation(struct s_stack *stack)
 	nums = (int *)malloc(sizeof(int) * stack->size);
 	if (!nums)
 	{
-		printf("failed allocation of nums_a.");
+		ft_printf("failed allocation of nums_a.");
 		return (NULL);
 	}
 	return (nums);

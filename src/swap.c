@@ -11,19 +11,20 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf.h"
 
 static struct s_stack	*head_swap(struct s_stack *stack_temp);
 
 void	sa(struct s_stack *stack_a)
 {
 	stack_a = head_swap(stack_a);
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	sb(struct s_stack *stack_b)
 {
 	stack_b = head_swap(stack_b);
-	printf("sb\n");
+	ft_printf("sb\n");
 }
 
 static struct s_stack	*head_swap(struct s_stack *stack_temp)

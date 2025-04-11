@@ -49,14 +49,12 @@ $(NAME): $(OBJS) $(LIBFT)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
--include $(OBJS:.o=.d)
-
 clean:
-	rm -f $(OBJS) $(OBJS:.o=.d)
+	rm -rf $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
-fclean: clean
-	rm -f $(NAME)
+fclean:
+	rm -rf $(NAME) $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
