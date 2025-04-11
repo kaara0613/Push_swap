@@ -33,6 +33,22 @@ long	p_atoi(const char *str);
 int* coordinate_compression(int *arr, int elements_nbr);
 bool	sort_small_case_a(long flag, struct s_stack *stack_a);
 bool	sort_small_case_b(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
+void small_sort_u5(struct s_stack *stack_a, struct s_stack *stack_b);
+
+void small_sort_u2a(long flag, struct s_stack *stack_a);
+void small_sort_u2b(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
+
+void small_sort_u3a(long flag, struct s_stack *stack_a);
+void small_sort_u3b(struct s_stack *stack_a, struct s_stack *stack_b);
+
+void cba_a2(struct s_stack *stack_a);
+void bca_a2(struct s_stack *stack_a);
+
+void	acb_a(struct s_stack *stack_a);
+void	bac_a(struct s_stack *stack_a);
+void bca_a(struct s_stack *stack_a);
+void	cab_a(struct s_stack *stack_a);
+void	cba_a(struct s_stack *stack_a);
 
 //push_swap.c
 void	push_swap_a(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b);

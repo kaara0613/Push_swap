@@ -29,6 +29,7 @@ bool	check_duplicate_nums(struct s_stack *stack)
 			return (false);
 		i++;
 	}
+    free(nums);
 	return (true);
 }
 

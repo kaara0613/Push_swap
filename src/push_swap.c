@@ -18,6 +18,8 @@ void	push_swap_a(long pivot, long flag, struct s_stack *stack_a, struct s_stack 
 {
 	long	flag_temp;
 
+	if (stack_b->top == -1 && check_sort_per_a(stack_a))
+		return ;
 	if (sort_small_case_a(flag, stack_a))
 		return ;
 	flag_temp = flag;
@@ -32,6 +34,8 @@ static void	push_swap_b(long pivot, long flag, struct s_stack *stack_a, struct s
 {
 	long	flag_temp;
 
+	if (stack_b->top == -1 && check_sort_per_a(stack_a))
+		return ;
 	if (sort_small_case_b(flag, stack_a, stack_b))
 		return ;
 	flag_temp = flag;
