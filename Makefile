@@ -31,6 +31,7 @@ SRCS = src/main.c \
 	   src/sort_small_array.c \
 	   src/small_sort_u2.c \
 	   src/small_sort_u3.c \
+	   src/small_sort_u3b.c \
 	   src/small_sort_u5.c \
 
 

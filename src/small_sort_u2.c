@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include "ft_printf.h"
 
 void small_sort_u2a(long flag, struct s_stack *stack_a, struct s_stack *stack_b)
 {

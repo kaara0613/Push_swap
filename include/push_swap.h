@@ -38,8 +38,8 @@ void small_sort_u5(struct s_stack *stack_a, struct s_stack *stack_b);
 void small_sort_u2a(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 void small_sort_u2b(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 
-void small_sort_u3a(long flag, struct s_stack *stack_a);
-void small_sort_u3b(struct s_stack *stack_a, struct s_stack *stack_b);
+void small_sort_u3a(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
+void small_sort_u3b(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 
 void cba_a2(struct s_stack *stack_a);
 void bca_a2(struct s_stack *stack_a);
@@ -108,5 +108,13 @@ void	rrb(struct s_stack *stack_b);
 //swap.c
 void	sa(struct s_stack *s_stack_a);
 void	sb(struct s_stack *s_stack_b);
+
+//small_sort_u3
+bool	abc_b(struct s_stack *stack_a, struct s_stack *stack_b);
+bool	acb_b(struct s_stack *stack_a, struct s_stack *stack_b);
+bool	bac_b(struct s_stack *stack_a, struct s_stack *stack_b);
+bool	bca_b(struct s_stack *stack_a, struct s_stack *stack_b);
+bool	cab_b(struct s_stack *stack_a, struct s_stack *stack_b);
+bool	cba_b(struct s_stack *stack_a, struct s_stack *stack_b);
 
 #endif
