@@ -2,11 +2,11 @@
 
 bool	sort_small_case_a(long flag, struct s_stack *stack_a)
 {
-    if (count_pivot_u(flag, stack_a) == 3)
-	{
-        small_sort_u3a(flag, stack_a);
-		return (true);
-	}
+    // if (count_pivot_u(flag, stack_a) == 3)
+	// {
+    //     small_sort_u3a(flag, stack_a);
+	// 	return (true);
+	// }
 	if (count_pivot_u(flag, stack_a) <= 2)
 	{
         small_sort_u2a(flag, stack_a);

@@ -32,7 +32,7 @@ void bca_a(struct s_stack *stack_a)
 void	cab_a(struct s_stack *stack_a)
 {
 	if (stack_a->numbers[stack_a->top - 2] < stack_a->numbers[stack_a->top]
-        && stack_a->numbers[stack_a->top] < stack_a->numbers[stack_a->top - 1])
+        && stack_a->numbers[stack_a->top - 2] > stack_a->numbers[stack_a->top - 1])
 	{
 		sa(stack_a);
 		ra(stack_a);
@@ -57,7 +57,7 @@ void	cba_a(struct s_stack *stack_a)
 void	abc_b(struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	if (stack_b->top > -1
-		&& stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top]
+		&& stack_b->numbers[stack_b->top] < stack_b->numbers[stack_b->top - 1]
 		&& stack_b->numbers[stack_b->top - 1] < stack_b->numbers[stack_b->top - 2])
 	{
 		pa(stack_a, stack_b);
@@ -71,8 +71,8 @@ void	abc_b(struct s_stack *stack_a, struct s_stack *stack_b)
 void	acb_b(struct s_stack *stack_a, struct s_stack *stack_b)//
 {
 	if (stack_b->top > -1
-		&& stack_b->numbers[stack_b->top - 2] < stack_b->numbers[stack_b->top - 1]
-		&& stack_b->numbers[stack_b->top - 2] > stack_b->numbers[stack_b->top])
+		&& stack_b->numbers[stack_b->top] < stack_b->numbers[stack_b->top - 1]
+		&& stack_b->numbers[stack_b->top] < stack_b->numbers[stack_b->top - 2])
 	{
 		sb(stack_b);
 		pa(stack_a, stack_b);
@@ -119,14 +119,13 @@ void	bca_b(struct s_stack *stack_a, struct s_stack *stack_b)//
 void	cab_b(struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	if (stack_b->top > -1
-		&& stack_b->numbers[stack_b->top - 2] < stack_b->numbers[stack_b->top]
-        && stack_b->numbers[stack_b->top] < stack_b->numbers[stack_b->top - 1])
+		&& stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1]
+		&& stack_b->numbers[stack_b->top - 1] < stack_b->numbers[stack_b->top - 2])
 	{
-		pa(stack_a, stack_b);
-		sb(stack_b);
 		pa(stack_a, stack_b);
 		pa(stack_a, stack_b);
 		ra(stack_a);
+		pa(stack_a, stack_b);
 		ra(stack_a);
 		ra(stack_a);
 	}
@@ -135,7 +134,7 @@ void	cab_b(struct s_stack *stack_a, struct s_stack *stack_b)
 void	cba_b(struct s_stack *stack_a, struct s_stack *stack_b)//
 {
 	if (stack_b->top > -1
-		&& stack_b->numbers[stack_b->top - 1] < stack_b->numbers[stack_b->top]
+		&& stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1]
 		&& stack_b->numbers[stack_b->top - 1] > stack_b->numbers[stack_b->top - 2])
 	{
 		pa(stack_a, stack_b);
