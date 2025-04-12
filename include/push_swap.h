@@ -31,11 +31,11 @@ struct s_stack {
 
 long	p_atoi(const char *str);
 int* coordinate_compression(int *arr, int elements_nbr);
-bool	sort_small_case_a(long flag, struct s_stack *stack_a);
+bool	sort_small_case_a(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 bool	sort_small_case_b(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 void small_sort_u5(struct s_stack *stack_a, struct s_stack *stack_b);
 
-void small_sort_u2a(long flag, struct s_stack *stack_a);
+void small_sort_u2a(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 void small_sort_u2b(long flag, struct s_stack *stack_a, struct s_stack *stack_b);
 
 void small_sort_u3a(long flag, struct s_stack *stack_a);
