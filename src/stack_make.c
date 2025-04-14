@@ -6,12 +6,14 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 13:05:41 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 16:10:11 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
+#include <stdlib.h>
+#include <limits.h>
 
 struct s_stack	*make_stack_a(int argc, char **argv)
 {
@@ -53,7 +55,7 @@ struct s_stack	*make_stack_b(struct s_stack *stack_a)
 
 int	*nums_allocation(struct s_stack *stack)
 {
-	int *nums;
+	int	*nums;
 
 	nums = (int *)malloc(sizeof(int) * stack->size);
 	if (!nums)

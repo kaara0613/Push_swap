@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:43:06 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 15:51:41 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
 
-static void rev_rotate(struct s_stack *stack_temp);
+static void	rev_rotate(struct s_stack *stack_temp);
 
 void	rra(struct s_stack *stack_a)
 {
@@ -27,7 +27,7 @@ void	rrb(struct s_stack *stack_b)
 	ft_printf("rrb\n");
 }
 
-static void rev_rotate(struct s_stack *stack_temp)
+static void	rev_rotate(struct s_stack *stack_temp)
 {
 	int	i;
 	int	temp;

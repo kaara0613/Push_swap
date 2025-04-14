@@ -1,7 +1,19 @@
-#include "push_swap.h"
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_sort_u2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 15:52:05 by kaara             #+#    #+#             */
+/*   Updated: 2025/04/14 15:52:21 by kaara            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void small_sort_u2a(long flag, struct s_stack *stack_a, struct s_stack *stack_b)
+#include "push_swap.h"
+
+void	small_sort_u2a(long flag,
+			struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	if (stack_a->numbers[stack_a->top] > stack_a->numbers[stack_a->top - 1])
 		sa(stack_a);
@@ -12,7 +24,8 @@ void small_sort_u2a(long flag, struct s_stack *stack_a, struct s_stack *stack_b)
 	stack_a->sorted_length = stack_a->numbers[0];
 }
 
-void small_sort_u2b(long flag, struct s_stack *stack_a, struct s_stack *stack_b)
+void	small_sort_u2b(long flag,
+			struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	if (stack_b->numbers[stack_b->top] > stack_b->numbers[stack_b->top - 1])
 		sb(stack_b);

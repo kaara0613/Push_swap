@@ -1,7 +1,19 @@
-#ifndef LIBFT_H
-# define LIBFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_libft.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 15:56:07 by kaara             #+#    #+#             */
+/*   Updated: 2025/04/14 16:12:03 by kaara            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_LIBFT_H
+# define FT_LIBFT_H
+
+# include <stdlib.h>
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);

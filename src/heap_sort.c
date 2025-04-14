@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:12:56 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 13:03:31 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 15:49:28 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static	void	heapify(int *nums, int n, int i)
 	largest = i;
 	left = 2 * i + 1;
 	right = 2 * i + 2;
-
 	if (left < n && nums[left] > nums[largest])
 		largest = left;
 	if (right < n && nums[right] > nums[largest])
@@ -55,7 +54,6 @@ void	heap_sort(int *nums, int n)
 		heapify(nums, n, i);
 		i--;
 	}
-
 	i = n - 1;
 	while (i > 0)
 	{

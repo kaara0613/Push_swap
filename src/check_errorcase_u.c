@@ -6,13 +6,14 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/03 22:31:21 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 16:13:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_libft.h"
 #include "ft_printf.h"
+#include <limits.h>
 
 bool	check_duplicate_nums(struct s_stack *stack)
 {
@@ -29,51 +30,51 @@ bool	check_duplicate_nums(struct s_stack *stack)
 			return (false);
 		i++;
 	}
-    free(nums);
+	free(nums);
 	return (true);
 }
 
-bool check_args_figure(int argc, char **argv)
+bool	check_args_figure(int argc, char **argv)
 {
-    int j;
-    int i;
+	int	j;
+	int	i;
 
-    j = 1;
-    while (j < argc)
-    {
-        i = 1;
-        if (argv[j][0] != '+' && argv[j][0] != '-'
-        	&& !('0' <= argv[j][0] && argv[j][0] <= '9'))
-        {
-            ft_printf("Error\n");
-            return (false);
-        }
-        while (argv[j][i] != '\0')
-        {
-            if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
-            {
-                ft_printf("Error\n");
-            	return (false);
-            }
-        	i++;
-        }
-        j++;
-    }
-    return (true);
+	j = 1;
+	while (j < argc)
+	{
+		i = 1;
+		if (argv[j][0] != '+' && argv[j][0] != '-'
+			&& !('0' <= argv[j][0] && argv[j][0] <= '9'))
+		{
+			ft_printf("Error\n");
+			return (false);
+		}
+		while (argv[j][i] != '\0')
+		{
+			if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
+			{
+				ft_printf("Error\n");
+				return (false);
+			}
+			i++;
+		}
+		j++;
+	}
+	return (true);
 }
 
-bool check_overflow(int argc, char **argv)
+bool	check_overflow(int argc, char **argv)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i++ < argc)
-    {
-        if(p_atoi(*argv++) == LONG_MAX)
-        {
+	i = 0;
+	while (i++ < argc)
+	{
+		if (p_atoi(*argv++) == LONG_MAX)
+		{
 			ft_printf("Error\n");
-        	return (false);
-        }
-    }
+			return (false);
+		}
+	}
 	return (true);
 }

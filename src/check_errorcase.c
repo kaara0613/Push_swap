@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 15:14:47 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 15:48:42 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ bool	check_error_args(int argc, char **argv)
 		return (false);
 	else if (argc == 2)
 		return (false);
-    if (!check_args_figure(argc, argv))
-    	return (false);
-    if (!check_overflow(argc, argv))
+	if (!check_args_figure(argc, argv))
+		return (false);
+	if (!check_overflow(argc, argv))
 		return (false);
 	return (true);
 }

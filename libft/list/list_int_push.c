@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_int_push.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 15:38:23 by kaara             #+#    #+#             */
+/*   Updated: 2025/04/14 16:13:04 by kaara            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "list.h"
 #include <stdlib.h>
 
-t_list  *allocation_list();
+static t_list	*allocation_list(void);
 
-void    list_int_push(t_list **list, int n)
+void	list_int_push(t_list **list, int n)
 {
-	t_list  *head;
+	t_list	*head;
 
 	head = *list;
 	if (*list == NULL)
@@ -23,9 +35,9 @@ void    list_int_push(t_list **list, int n)
 	}
 }
 
-t_list  *allocation_list()
+static t_list	*allocation_list(void)
 {
-	t_list  *list;
+	t_list	*list;
 
 	list = (t_list *)malloc(sizeof(t_list));
 	if (list == NULL)

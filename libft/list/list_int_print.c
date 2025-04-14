@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_int_print.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 13:31:07 by kaara             #+#    #+#             */
-/*   Updated: 2025/03/30 03:06:47 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 15:38:09 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void    list_int_print(t_list *list)
+void	list_int_print(t_list *list)
 {
-	int     i;
-	t_list  *head;
+	int		i;
+	t_list	*head;
 
 	i = 0;
 	head = list;

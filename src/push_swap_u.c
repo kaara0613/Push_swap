@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 08:53:21 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 15:50:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void partition_pivot_a(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b)
+void	partition_pivot_a(long pivot, long flag,
+		struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int	count;
 
@@ -37,7 +38,8 @@ void partition_pivot_a(long pivot, long flag, struct s_stack *stack_a, struct s_
 		rra(stack_a);
 }
 
-void partition_pivot_b(long pivot, long flag, struct s_stack *stack_a, struct s_stack *stack_b)
+void	partition_pivot_b(long pivot, long flag,
+		struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int	count;
 
