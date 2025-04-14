@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:09:11 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 16:23:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,9 @@ void			small_sort_u2b(long flag,
 
 void			cba_a2(struct s_stack *stack_a);
 void			bca_a2(struct s_stack *stack_a);
-
-void			acb_a(struct s_stack *stack_a);
+void			acb_a2(struct s_stack *stack_a);
+void			cab_a2(struct s_stack *stack_a);
 void			bac_a(struct s_stack *stack_a);
-void			bca_a(struct s_stack *stack_a);
-void			cab_a(struct s_stack *stack_a);
-void			cba_a(struct s_stack *stack_a);
 
 //push_swap.c
 void			push_swap_a(long pivot, long flag,

@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/02 14:43:19 by kaara            ###   ########.fr        #
+#    Updated: 2025/04/14 16:24:12 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ SRCS = src/main.c \
 	   src/sort_small_array.c \
 	   src/small_sort_u2.c \
 	   src/small_sort_u3.c \
-	   src/small_sort_u3b.c \
 	   src/small_sort_u5.c \
 
 

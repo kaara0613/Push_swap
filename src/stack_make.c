@@ -6,12 +6,13 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:10:11 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 16:27:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
+#include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
 

@@ -3,3 +3,5 @@
 *.o
 .vscode/
 checker_linux
+checker
+compile_commands.json

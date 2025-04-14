@@ -6,11 +6,12 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/02 13:03:17 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 16:29:39 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	pivot_remake(long flag, struct s_stack *stack)
 {

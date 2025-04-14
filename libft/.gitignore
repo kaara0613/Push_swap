@@ -1,3 +1,4 @@
 *.a
 *.o
-test_exec
+test_exe
+compile_commands.json
