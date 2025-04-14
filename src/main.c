@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:09:36 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/14 22:02:57 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int argc, char **argv)
 		return (0);
 	if (stack_a->top <= 4)
 		small_sort_u5(stack_a, stack_b);
-	push_swap_a(LONG_MAX, LONG_MAX, stack_a, stack_b);
+	else
+		push_swap_a(LONG_MAX, LONG_MAX, stack_a, stack_b);
 	free_stack(stack_a, stack_b);
 	return (0);
 }
