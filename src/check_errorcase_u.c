@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errorcase_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:13:29 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/15 17:07:12 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ bool	check_duplicate_nums(struct s_stack *stack)
 	while (i < stack->top)
 	{
 		if (nums[i] == nums[i + 1])
+		{
+			free(nums);
 			return (false);
+		}
 		i++;
 	}
 	free(nums);
