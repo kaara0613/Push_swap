@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:16:17 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 22:02:57 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/15 16:10:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int	main(int argc, char **argv)
 	stack_a = make_stack_a(argc, argv);
 	stack_b = make_stack_b(stack_a);
 	if (!check_error_case(stack_a))
+	{
+		free_stack(stack_a, stack_b);
 		return (0);
+	}
 	if (stack_a->top <= 4)
 		small_sort_u5(stack_a, stack_b);
 	else

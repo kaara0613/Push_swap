@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 09:42:36 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:23:47 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/15 16:51:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void			free_stack(struct s_stack *stack_a, struct s_stack *stack_b);
 bool			is_empty(struct s_stack *stack_temp);
 bool			is_full(struct s_stack *stack_temp);
 bool			put(int input_value, struct s_stack *stack_temp);
-int				pop(struct s_stack *stack_temp);
+long			pop(struct s_stack *stack_temp);
 
 //push.c
 bool			pa(struct s_stack *s_stack_a, struct s_stack *stack_b);

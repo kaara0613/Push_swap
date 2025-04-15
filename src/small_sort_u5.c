@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort_u5.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:52:37 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 22:23:59 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/15 16:52:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	case_u4(struct s_stack *stack_a, struct s_stack *stack_b)
 	pivot = pivot_remake(LONG_MAX, stack_a);
 	while (count_pivot_under(pivot, stack_a) > 0)
 	{
-		if (stack_a->numbers[stack_a->top] < pivot)
+		if (stack_a->numbers[stack_a->top] < (int)pivot)
 			pb(stack_a, stack_b);
 		else
 			ra(stack_a);

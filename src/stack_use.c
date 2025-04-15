@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_use.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:08:39 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/01 12:45:14 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/15 16:50:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
+#include <limits.h>
 
 bool	is_empty(struct s_stack *stack_temp)
 {
@@ -31,7 +32,7 @@ bool	put(int input_value, struct s_stack *stack_temp)
 {
 	if (is_full(stack_temp))
 	{
-		ft_printf("This stack is full.");
+		// ft_printf("This stack is full.");
 		return (false);
 	}
 	stack_temp->numbers[stack_temp->top + 1] = input_value;
@@ -39,14 +40,14 @@ bool	put(int input_value, struct s_stack *stack_temp)
 	return (true);
 }
 
-int	pop(struct s_stack *stack_temp)
+long	pop(struct s_stack *stack_temp)
 {
-	int	return_value;
+	long	return_value;
 
 	if (is_empty(stack_temp))
 	{
-		ft_printf("This stack is empty");
-		return (-1);
+		// ft_printf("This stack is empty");
+		return (LONG_MIN);
 	}
 	return_value = stack_temp->numbers[stack_temp->top];
 	stack_temp->numbers[stack_temp->top] = 0;
