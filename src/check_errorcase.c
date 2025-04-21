@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errorcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 15:48:42 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/21 14:01:23 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 bool	check_error_args(int argc, char **argv)
 {
-	if (argc <= 1)
-		return (false);
-	else if (argc == 2)
-		return (false);
 	if (!check_args_figure(argc, argv))
 		return (false);
 	if (!check_overflow(argc, argv))

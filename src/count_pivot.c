@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_pivot.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:10:17 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:14:52 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/21 14:05:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	count_pivot_u(long flag, struct s_stack *stack)
 	i = 0;
 	temp = stack->top;
 	while (stack->numbers[temp] >= stack->sorted_length
-		&& stack->numbers[temp--] < flag && temp >= -1)
+		&& stack->numbers[temp--] < flag && temp > -1)
 		i++;
 	return (i);
 }
