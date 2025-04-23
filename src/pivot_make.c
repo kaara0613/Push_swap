@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pivot_make.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:02:36 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/14 16:29:39 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/23 20:39:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	pivot_remake(long flag, struct s_stack *stack)
 	int	i;
 
 	nums = nums_allocation(stack);
-	i = count_pivot_u(flag, stack) - 1;
+	i = count_pivot_u(flag, stack);
 	count = i;
 	temp_top = stack->top;
 	while (i >= 0)
