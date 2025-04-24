@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_errorcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/21 14:01:23 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/24 19:50:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
+#include <unistd.h>
 
 bool	check_error_args(int argc, char **argv)
 {
@@ -26,7 +27,7 @@ bool	check_error_case(struct s_stack *stack)
 {
 	if (!check_duplicate_nums(stack))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (false);
 	}
 	if (check_sort_per_a(stack))

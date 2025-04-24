@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   check_errorcase_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/15 17:07:12 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/24 19:50:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_libft.h"
 #include "ft_printf.h"
+#include <unistd.h>
 #include <limits.h>
 
 bool	check_duplicate_nums(struct s_stack *stack)
@@ -49,14 +50,14 @@ bool	check_args_figure(int argc, char **argv)
 		if (argv[j][0] != '+' && argv[j][0] != '-'
 			&& !('0' <= argv[j][0] && argv[j][0] <= '9'))
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			return (false);
 		}
 		while (argv[j][i] != '\0')
 		{
 			if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				return (false);
 			}
 			i++;
@@ -75,7 +76,7 @@ bool	check_overflow(int argc, char **argv)
 	{
 		if (p_atoi(*argv++) == LONG_MAX)
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			return (false);
 		}
 	}
