@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:08:39 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/15 16:50:37 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/24 15:33:25 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ bool	put(int input_value, struct s_stack *stack_temp)
 {
 	if (is_full(stack_temp))
 	{
-		// ft_printf("This stack is full.");
 		return (false);
 	}
 	stack_temp->numbers[stack_temp->top + 1] = input_value;
@@ -46,7 +45,6 @@ long	pop(struct s_stack *stack_temp)
 
 	if (is_empty(stack_temp))
 	{
-		// ft_printf("This stack is empty");
 		return (LONG_MIN);
 	}
 	return_value = stack_temp->numbers[stack_temp->top];

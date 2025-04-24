@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:34:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/15 16:42:48 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/24 15:33:04 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	*nums_allocation(struct s_stack *stack)
 	nums = (int *)malloc(sizeof(int) * stack->size);
 	if (!nums)
 	{
-		// ft_printf("failed allocation of nums_a.");
 		return (NULL);
 	}
 	return (nums);
