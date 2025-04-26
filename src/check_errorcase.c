@@ -6,12 +6,13 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:28:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/26 12:08:29 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/26 12:55:12 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
+#include <unistd.h>
 
 bool	check_error_args(int argc, char **argv)
 {
