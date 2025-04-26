@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:42:42 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/15 17:07:12 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/26 12:08:20 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ bool	check_args_figure(int argc, char **argv)
 		if (argv[j][0] != '+' && argv[j][0] != '-'
 			&& !('0' <= argv[j][0] && argv[j][0] <= '9'))
 		{
-			ft_printf("Error\n");
+			ft_dprintf("Error\n");
 			return (false);
 		}
 		while (argv[j][i] != '\0')
 		{
 			if (!('0' <= argv[j][i] && argv[j][i] <= '9'))
 			{
-				ft_printf("Error\n");
+				ft_dprintf("Error\n");
 				return (false);
 			}
 			i++;
@@ -75,7 +75,7 @@ bool	check_overflow(int argc, char **argv)
 	{
 		if (p_atoi(*argv++) == LONG_MAX)
 		{
-			ft_printf("Error\n");
+			ft_dprintf("Error\n");
 			return (false);
 		}
 	}
